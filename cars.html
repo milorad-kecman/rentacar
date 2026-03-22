@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naša vozila — Rent a car MM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Otvori meni">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="cars.html" class="active">Vozila</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Iznajmi odmah</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Naša flota</h1>
+      <p>Izaberite iz naše ponude dobro održavanih vozila po najboljim cijenama.</p>
+    </div>
+  </section>
+
+  <!-- ============ FILTER BAR ============ -->
+  <div class="filter-bar">
+    <div class="container filter-inner">
+      <button class="filter-btn active" data-filter="all">Sva vozila</button>
+      <button class="filter-btn" data-filter="automatic">Automatik</button>
+      <button class="filter-btn" data-filter="manual">Manuelni</button>
+      <button class="filter-btn" data-filter="diesel">Dizel</button>
+      <button class="filter-btn" data-filter="petrol">Benzin</button>
+    </div>
+  </div>
+
+  <!-- ============ CARS GRID ============ -->
+  <section class="cars-section">
+    <div class="container">
+      <div class="cars-grid" id="carsGrid">
+
+        <!-- Car 1: Audi A4 -->
+        <div class="car-card" data-tags="diesel automatic sedan">
+          <div class="car-slider" data-slider>
+            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 prednja strana" class="active" />
+            <!-- <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 unutrašnjost" />
+            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 bočna strana" />
+            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 zadnja strana" /> -->
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">Audi A4 2018</h3>
+            <div class="car-meta">
+              <span class="car-tag">Dizel</span>
+              <span class="car-tag">Automatik</span>
+              <span class="car-tag">Sedan</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">80 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="Audi A4 2018">Upit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 2: BMW 3 Series -->
+        <div class="car-card" data-tags="petrol automatic sedan">
+          <div class="car-slider" data-slider>
+            <img src="https://placehold.co/640x400/0d1b2a/ffffff?text=BMW+3+Series+%E2%80%94+Front" alt="BMW 3 serija prednja strana" class="active" />
+            <img src="https://placehold.co/640x400/1b2a3b/ffffff?text=BMW+3+Series+%E2%80%94+Interior" alt="BMW 3 serija unutrašnjost" />
+            <img src="https://placehold.co/640x400/263548/ffffff?text=BMW+3+Series+%E2%80%94+Side" alt="BMW 3 serija bočna strana" />
+            <img src="https://placehold.co/640x400/304055/ffffff?text=BMW+3+Series+%E2%80%94+Rear" alt="BMW 3 serija zadnja strana" />
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">BMW 3 Serija 2019</h3>
+            <div class="car-meta">
+              <span class="car-tag">Benzin</span>
+              <span class="car-tag">Automatik</span>
+              <span class="car-tag">Sedan</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">90 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="BMW 3 Serija 2019">Upit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 3: Mercedes C-Class -->
+        <div class="car-card" data-tags="diesel automatic sedan">
+          <div class="car-slider" data-slider>
+            <img src="https://placehold.co/640x400/1a0d0d/ffffff?text=Mercedes+C-Class+%E2%80%94+Front" alt="Mercedes C-klasa prednja strana" class="active" />
+            <img src="https://placehold.co/640x400/2a1515/ffffff?text=Mercedes+C-Class+%E2%80%94+Interior" alt="Mercedes C-klasa unutrašnjost" />
+            <img src="https://placehold.co/640x400/381a1a/ffffff?text=Mercedes+C-Class+%E2%80%94+Side" alt="Mercedes C-klasa bočna strana" />
+            <img src="https://placehold.co/640x400/441f1f/ffffff?text=Mercedes+C-Class+%E2%80%94+Rear" alt="Mercedes C-klasa zadnja strana" />
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">Mercedes C-klasa 2020</h3>
+            <div class="car-meta">
+              <span class="car-tag">Dizel</span>
+              <span class="car-tag">Automatik</span>
+              <span class="car-tag">Sedan</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">100 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="Mercedes C-klasa 2020">Upit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 4: VW Golf -->
+        <div class="car-card" data-tags="diesel manual hatchback">
+          <div class="car-slider" data-slider>
+            <img src="https://placehold.co/640x400/1a2e1a/ffffff?text=VW+Golf+%E2%80%94+Front" alt="VW Golf prednja strana" class="active" />
+            <img src="https://placehold.co/640x400/243624/ffffff?text=VW+Golf+%E2%80%94+Interior" alt="VW Golf unutrašnjost" />
+            <img src="https://placehold.co/640x400/2d422d/ffffff?text=VW+Golf+%E2%80%94+Side" alt="VW Golf bočna strana" />
+            <img src="https://placehold.co/640x400/354d35/ffffff?text=VW+Golf+%E2%80%94+Rear" alt="VW Golf zadnja strana" />
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">Volkswagen Golf 2021</h3>
+            <div class="car-meta">
+              <span class="car-tag">Dizel</span>
+              <span class="car-tag">Manuelni</span>
+              <span class="car-tag">Hečbek</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">60 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="Volkswagen Golf 2021">Upit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 5: Toyota Camry -->
+        <div class="car-card" data-tags="petrol automatic sedan">
+          <div class="car-slider" data-slider>
+            <img src="https://placehold.co/640x400/1a1a2e/ffffff?text=Toyota+Camry+%E2%80%94+Front" alt="Toyota Camry prednja strana" class="active" />
+            <img src="https://placehold.co/640x400/242436/ffffff?text=Toyota+Camry+%E2%80%94+Interior" alt="Toyota Camry unutrašnjost" />
+            <img src="https://placehold.co/640x400/2d2d42/ffffff?text=Toyota+Camry+%E2%80%94+Side" alt="Toyota Camry bočna strana" />
+            <img src="https://placehold.co/640x400/35354d/ffffff?text=Toyota+Camry+%E2%80%94+Rear" alt="Toyota Camry zadnja strana" />
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">Toyota Camry 2020</h3>
+            <div class="car-meta">
+              <span class="car-tag">Benzin</span>
+              <span class="car-tag">Automatik</span>
+              <span class="car-tag">Sedan</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">70 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="Toyota Camry 2020">Upit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car 6: Ford Focus -->
+        <div class="car-card" data-tags="petrol manual hatchback">
+          <div class="car-slider" data-slider>
+            <img src="https://placehold.co/640x400/2e1a0d/ffffff?text=Ford+Focus+%E2%80%94+Front" alt="Ford Focus prednja strana" class="active" />
+            <img src="https://placehold.co/640x400/3b2415/ffffff?text=Ford+Focus+%E2%80%94+Interior" alt="Ford Focus unutrašnjost" />
+            <img src="https://placehold.co/640x400/482d1a/ffffff?text=Ford+Focus+%E2%80%94+Side" alt="Ford Focus bočna strana" />
+            <img src="https://placehold.co/640x400/54351f/ffffff?text=Ford+Focus+%E2%80%94+Rear" alt="Ford Focus zadnja strana" />
+            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+            <div class="slider-dots">
+              <button class="slider-dot active" aria-label="Slajd 1"></button>
+              <button class="slider-dot" aria-label="Slajd 2"></button>
+              <button class="slider-dot" aria-label="Slajd 3"></button>
+              <button class="slider-dot" aria-label="Slajd 4"></button>
+            </div>
+          </div>
+          <div class="car-body">
+            <h3 class="car-name">Ford Focus 2019</h3>
+            <div class="car-meta">
+              <span class="car-tag">Benzin</span>
+              <span class="car-tag">Manuelni</span>
+              <span class="car-tag">Hečbek</span>
+              <span class="car-tag">5 mjesta</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">55 KM <span>/ dan</span></div>
+              <button class="btn btn-primary inquire-btn" data-car="Ford Focus 2019">Upit</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">Rent a car <span>MM</span></div>
+          <p>Premium usluga iznajmljivanja vozila sa najboljim cijenama i širokim izborom za svako putovanje.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigacija</h4>
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="cars.html">Vozila</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+38761234567">+387 61 234 567</a></li>
+            <li><a href="mailto:info@driveeasy.ba">info@driveeasy.ba</a></li>
+            <li>Ferhadija 12, Sarajevo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Rent a car MM. Sva prava zadržana.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ UPIT MODAL ============ -->
+  <div class="modal-overlay" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Zatvori">&times;</button>
+      <h2 class="modal-title" id="modalTitle">Pošalji upit</h2>
+      <p class="modal-car-label">Upit za: <strong id="modalCarName"></strong></p>
+      <form id="inquiryForm" novalidate>
+        <div class="form-group">
+          <label for="inqName">Ime i prezime</label>
+          <input type="text" id="inqName" placeholder="npr. Amir Kovač" required />
+        </div>
+        <div class="form-group">
+          <label for="inqEmail">E-mail adresa</label>
+          <input type="email" id="inqEmail" placeholder="vas@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="inqPhone">Telefon <span class="optional">(opciono)</span></label>
+          <input type="tel" id="inqPhone" placeholder="+387 61 000 000" />
+        </div>
+        <div class="form-group">
+          <label for="inqMessage">Poruka</label>
+          <textarea id="inqMessage" placeholder="Recite nam datume iznajmljivanja, pitanja, itd." required></textarea>
+        </div>
+        <p class="modal-success" id="modalSuccess">Vaš e-mail klijent će se otvoriti. Hvala vam!</p>
+        <button type="submit" class="btn btn-primary modal-submit">Pošalji upit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
