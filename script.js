@@ -1,4 +1,23 @@
 // =============================================
+// SCROLL REVEAL — IntersectionObserver
+// =============================================
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+);
+
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// =============================================
 // MOBILE NAV TOGGLE
 // =============================================
 const navToggle = document.getElementById('navToggle');
@@ -9,7 +28,6 @@ if (navToggle && navLinks) {
     navLinks.classList.toggle('open');
   });
 
-  // Close nav when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
@@ -40,7 +58,7 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     dot.addEventListener('click', () => goTo(i));
   });
 
-  // Auto-advance every 4 seconds (pause on hover)
+  // Auto-advance every 4 seconds, pause on hover
   let autoPlay = setInterval(() => goTo(current + 1), 4000);
   slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
   slider.addEventListener('mouseleave', () => {
@@ -121,7 +139,6 @@ const carCards   = document.querySelectorAll('#carsGrid .car-card');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Update active state
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
@@ -129,11 +146,8 @@ filterBtns.forEach(btn => {
 
     carCards.forEach(card => {
       const tags = card.dataset.tags || '';
-      if (filter === 'all' || tags.includes(filter)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+      const show = filter === 'all' || tags.includes(filter);
+      card.style.display = show ? '' : 'none';
     });
   });
 });

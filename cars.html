@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naša vozila — Rent a car MM</title>
+  <title>Naša flota &mdash; Rent a car MM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -27,14 +30,20 @@
   <!-- ============ PAGE HEADER ============ -->
   <section class="page-header">
     <div class="container">
-      <h1>Naša flota</h1>
-      <p>Izaberite iz naše ponude dobro održavanih vozila po najboljim cijenama.</p>
+      <div class="page-header-inner">
+        <div>
+          <span class="eyebrow" style="color: #71717a;">Naša ponuda</span>
+          <h1>Naša flota</h1>
+          <p>Dobro održavana vozila po transparentnim cijenama. Filtrišite po tipu pogona ili mjenjača.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ FILTER BAR ============ -->
   <div class="filter-bar">
     <div class="container filter-inner">
+      <span class="filter-label">Filtriraj</span>
       <button class="filter-btn active" data-filter="all">Sva vozila</button>
       <button class="filter-btn" data-filter="automatic">Automatik</button>
       <button class="filter-btn" data-filter="manual">Manuelni</button>
@@ -48,13 +57,13 @@
     <div class="container">
       <div class="cars-grid" id="carsGrid">
 
-        <!-- Car 1: Audi A4 -->
-        <div class="car-card" data-tags="diesel automatic sedan">
+        <!-- Audi A4 -->
+        <div class="car-card" data-tags="diesel automatic sedan" data-reveal>
           <div class="car-slider" data-slider>
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 prednja strana" class="active" />
-            <!-- <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 unutrašnjost" />
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 bočna strana" />
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 zadnja strana" /> -->
+            <img src="https://picsum.photos/seed/audi4a/800/520" alt="Audi A4 2018 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/audi4b/800/520" alt="Audi A4 unutrašnjost" />
+            <img src="https://picsum.photos/seed/audi4c/800/520" alt="Audi A4 bočna strana" />
+            <img src="https://picsum.photos/seed/audi4d/800/520" alt="Audi A4 zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -79,13 +88,13 @@
           </div>
         </div>
 
-        <!-- Car 2: BMW 3 Series -->
-        <div class="car-card" data-tags="petrol automatic sedan">
+        <!-- BMW 3 Series -->
+        <div class="car-card" data-tags="petrol automatic sedan" data-reveal data-reveal-delay="1">
           <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/0d1b2a/ffffff?text=BMW+3+Series+%E2%80%94+Front" alt="BMW 3 serija prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/1b2a3b/ffffff?text=BMW+3+Series+%E2%80%94+Interior" alt="BMW 3 serija unutrašnjost" />
-            <img src="https://placehold.co/640x400/263548/ffffff?text=BMW+3+Series+%E2%80%94+Side" alt="BMW 3 serija bočna strana" />
-            <img src="https://placehold.co/640x400/304055/ffffff?text=BMW+3+Series+%E2%80%94+Rear" alt="BMW 3 serija zadnja strana" />
+            <img src="https://picsum.photos/seed/bmw3a/800/520" alt="BMW 3 Serija 2019 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/bmw3b/800/520" alt="BMW 3 unutrašnjost" />
+            <img src="https://picsum.photos/seed/bmw3c/800/520" alt="BMW 3 bočna strana" />
+            <img src="https://picsum.photos/seed/bmw3d/800/520" alt="BMW 3 zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -110,13 +119,13 @@
           </div>
         </div>
 
-        <!-- Car 3: Mercedes C-Class -->
-        <div class="car-card" data-tags="diesel automatic sedan">
+        <!-- Mercedes C-Class -->
+        <div class="car-card" data-tags="diesel automatic sedan" data-reveal data-reveal-delay="2">
           <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/1a0d0d/ffffff?text=Mercedes+C-Class+%E2%80%94+Front" alt="Mercedes C-klasa prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/2a1515/ffffff?text=Mercedes+C-Class+%E2%80%94+Interior" alt="Mercedes C-klasa unutrašnjost" />
-            <img src="https://placehold.co/640x400/381a1a/ffffff?text=Mercedes+C-Class+%E2%80%94+Side" alt="Mercedes C-klasa bočna strana" />
-            <img src="https://placehold.co/640x400/441f1f/ffffff?text=Mercedes+C-Class+%E2%80%94+Rear" alt="Mercedes C-klasa zadnja strana" />
+            <img src="https://picsum.photos/seed/mercc20a/800/520" alt="Mercedes C-klasa 2020 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/mercc20b/800/520" alt="Mercedes C-klasa unutrašnjost" />
+            <img src="https://picsum.photos/seed/mercc20c/800/520" alt="Mercedes C-klasa bočna strana" />
+            <img src="https://picsum.photos/seed/mercc20d/800/520" alt="Mercedes C-klasa zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -141,13 +150,13 @@
           </div>
         </div>
 
-        <!-- Car 4: VW Golf -->
-        <div class="car-card" data-tags="diesel manual hatchback">
+        <!-- VW Golf -->
+        <div class="car-card" data-tags="diesel manual hatchback" data-reveal>
           <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/1a2e1a/ffffff?text=VW+Golf+%E2%80%94+Front" alt="VW Golf prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/243624/ffffff?text=VW+Golf+%E2%80%94+Interior" alt="VW Golf unutrašnjost" />
-            <img src="https://placehold.co/640x400/2d422d/ffffff?text=VW+Golf+%E2%80%94+Side" alt="VW Golf bočna strana" />
-            <img src="https://placehold.co/640x400/354d35/ffffff?text=VW+Golf+%E2%80%94+Rear" alt="VW Golf zadnja strana" />
+            <img src="https://picsum.photos/seed/golf21a/800/520" alt="Volkswagen Golf 2021 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/golf21b/800/520" alt="VW Golf unutrašnjost" />
+            <img src="https://picsum.photos/seed/golf21c/800/520" alt="VW Golf bočna strana" />
+            <img src="https://picsum.photos/seed/golf21d/800/520" alt="VW Golf zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -172,13 +181,13 @@
           </div>
         </div>
 
-        <!-- Car 5: Toyota Camry -->
-        <div class="car-card" data-tags="petrol automatic sedan">
+        <!-- Toyota Camry -->
+        <div class="car-card" data-tags="petrol automatic sedan" data-reveal data-reveal-delay="1">
           <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/1a1a2e/ffffff?text=Toyota+Camry+%E2%80%94+Front" alt="Toyota Camry prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/242436/ffffff?text=Toyota+Camry+%E2%80%94+Interior" alt="Toyota Camry unutrašnjost" />
-            <img src="https://placehold.co/640x400/2d2d42/ffffff?text=Toyota+Camry+%E2%80%94+Side" alt="Toyota Camry bočna strana" />
-            <img src="https://placehold.co/640x400/35354d/ffffff?text=Toyota+Camry+%E2%80%94+Rear" alt="Toyota Camry zadnja strana" />
+            <img src="https://picsum.photos/seed/camry20a/800/520" alt="Toyota Camry 2020 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/camry20b/800/520" alt="Toyota Camry unutrašnjost" />
+            <img src="https://picsum.photos/seed/camry20c/800/520" alt="Toyota Camry bočna strana" />
+            <img src="https://picsum.photos/seed/camry20d/800/520" alt="Toyota Camry zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -203,13 +212,13 @@
           </div>
         </div>
 
-        <!-- Car 6: Ford Focus -->
-        <div class="car-card" data-tags="petrol manual hatchback">
+        <!-- Ford Focus -->
+        <div class="car-card" data-tags="petrol manual hatchback" data-reveal data-reveal-delay="2">
           <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/2e1a0d/ffffff?text=Ford+Focus+%E2%80%94+Front" alt="Ford Focus prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/3b2415/ffffff?text=Ford+Focus+%E2%80%94+Interior" alt="Ford Focus unutrašnjost" />
-            <img src="https://placehold.co/640x400/482d1a/ffffff?text=Ford+Focus+%E2%80%94+Side" alt="Ford Focus bočna strana" />
-            <img src="https://placehold.co/640x400/54351f/ffffff?text=Ford+Focus+%E2%80%94+Rear" alt="Ford Focus zadnja strana" />
+            <img src="https://picsum.photos/seed/focus19a/800/520" alt="Ford Focus 2019 prednja strana" class="active" />
+            <img src="https://picsum.photos/seed/focus19b/800/520" alt="Ford Focus unutrašnjost" />
+            <img src="https://picsum.photos/seed/focus19c/800/520" alt="Ford Focus bočna strana" />
+            <img src="https://picsum.photos/seed/focus19d/800/520" alt="Ford Focus zadnja strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -234,7 +243,7 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- end #carsGrid -->
     </div>
   </section>
 
@@ -243,8 +252,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-logo">Rent a car <span>MM</span></div>
-          <p>Premium usluga iznajmljivanja vozila sa najboljim cijenama i širokim izborom za svako putovanje.</p>
+          <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
+          <p>Premium iznajmljivanje vozila u Sarajevu i okolici. Pouzdano, transparentno i fleksibilno.</p>
         </div>
         <div class="footer-col">
           <h4>Navigacija</h4>
@@ -260,6 +269,7 @@
             <li><a href="tel:+38761234567">+387 61 234 567</a></li>
             <li><a href="mailto:info@driveeasy.ba">info@driveeasy.ba</a></li>
             <li>Ferhadija 12, Sarajevo</li>
+            <li>Pon&ndash;Sub, 8h&ndash;20h</li>
           </ul>
         </div>
       </div>
@@ -290,7 +300,7 @@
         </div>
         <div class="form-group">
           <label for="inqMessage">Poruka</label>
-          <textarea id="inqMessage" placeholder="Recite nam datume iznajmljivanja, pitanja, itd." required></textarea>
+          <textarea id="inqMessage" placeholder="Datumi iznajmljivanja, pitanja, itd." required></textarea>
         </div>
         <p class="modal-success" id="modalSuccess">Vaš e-mail klijent će se otvoriti. Hvala vam!</p>
         <button type="submit" class="btn btn-primary modal-submit">Pošalji upit</button>

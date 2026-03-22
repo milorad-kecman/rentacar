@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rent a car MM</title>
+  <title>Rent a car MM — Banja Luka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,59 +20,88 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html" class="active">Početna</a></li>
-        <li><a href="cars.html">Vozila</a></li>
+        <li><a href="#vozila">Vozila</a></li>
         <li><a href="#contact">Kontakt</a></li>
-        <li><a href="cars.html" class="btn btn-primary">Iznajmi odmah</a></li>
+        <li><a href="cars.html" class="btn btn-primary">Pregledaj flotu</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO — SPLIT SCREEN ============ -->
   <section class="hero">
-    <div class="container">
+
+    <!-- Left: Content -->
+    <div class="hero-left">
       <div class="hero-content">
-        <div class="hero-badge">Premium iznajmljivanje vozila</div>
-        <h1>Vozite auto koji <span>zaslužujete</span></h1>
-        <p>
-          Povoljne dnevne cijene, širok izbor vozila i fleksibilne opcije preuzimanja.
-          Vaše putovanje počinje ovdje.
+        <span class="hero-eyebrow">Rent a car MM &mdash; Sarajevo, BiH</span>
+        <h1>Pravi auto,<br><em>prave cijene.</em></h1>
+        <p class="hero-desc">
+          Iznajmite vozilo iz naše dobro održavane flote. Transparentne dnevne cijene,
+          bez skrivenih naknada i uz fleksibilne opcije preuzimanja.
         </p>
-        <div class="hero-cta">
+        <div class="hero-actions">
           <a href="cars.html" class="btn btn-primary">Pregledaj vozila</a>
-          <a href="#contact" class="btn btn-outline">Kontaktirajte nas</a>
+          <a href="#contact" class="btn btn-ghost">Kontaktirajte nas</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
             <strong>50+</strong>
-            <span>Vozila</span>
+            <span>Vozila u floti</span>
           </div>
           <div class="stat-item">
             <strong>500+</strong>
             <span>Zadovoljnih klijenata</span>
           </div>
           <div class="stat-item">
-            <strong>5g</strong>
-            <span>Iskustva</span>
+            <strong>5 god</strong>
+            <span>Na tržištu</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Right: Image panel -->
+    <div class="hero-right">
+      <img
+        src="images/hero.jpg"
+        alt="Premium vozila za iznajmljivanje"
+        loading="eager"
+      />
+      <div class="hero-right-overlay"></div>
+      <div class="hero-badge">
+        <span class="badge-from">od</span>
+        <span class="badge-price">55 KM</span>
+        <span class="badge-per">&nbsp;/ dan</span>
+      </div>
+    </div>
+
   </section>
 
   <!-- ============ FEATURED CARS ============ -->
-  <section class="section featured">
+  <section class="section featured" id="vozila">
     <div class="container">
-      <h2 class="section-title">Istaknuta vozila</h2>
-      <p class="section-subtitle">Naši najpopularniji izbori — spremni za vožnju danas.</p>
 
-      <div class="cars-grid">
+      <div class="section-head" data-reveal>
+        <div class="section-head-left">
+          <span class="eyebrow">Istaknuta vozila</span>
+          <h2>Odabrana za vas</h2>
+        </div>
+        <a href="cars.html" class="btn btn-outline btn-sm">
+          Sva vozila
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
 
-        <!-- Car 1: Audi A4 -->
-        <div class="car-card">
+      <div class="featured-grid">
+
+        <!-- Large featured card: Audi A4 -->
+        <div class="car-card featured-card" data-tags="diesel automatic sedan" data-reveal data-reveal-delay="1">
           <div class="car-slider" data-slider>
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 prednja strana" class="active" />
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 unutrašnjost" />
-            <img src="https://images.pexels.com/photos/1719647/pexels-photo-1719647.jpeg" alt="Audi A4 bočna strana" />
+            <img src="https://picsum.photos/seed/audi4a/800/600" alt="Audi A4 2018" class="active" />
+            <img src="https://picsum.photos/seed/audi4b/800/600" alt="Audi A4 unutrašnjost" />
+            <img src="https://picsum.photos/seed/audi4c/800/600" alt="Audi A4 bočna strana" />
             <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
             <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
             <div class="slider-dots">
@@ -93,99 +125,146 @@
           </div>
         </div>
 
-        <!-- Car 2: BMW 3 Series -->
-        <div class="car-card">
-          <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/0d1b2a/ffffff?text=BMW+3+Series+%E2%80%94+Front" alt="BMW 3 serija prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/1b2a3b/ffffff?text=BMW+3+Series+%E2%80%94+Interior" alt="BMW 3 serija unutrašnjost" />
-            <img src="https://placehold.co/640x400/263548/ffffff?text=BMW+3+Series+%E2%80%94+Side" alt="BMW 3 serija bočna strana" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">BMW 3 Serija 2019</h3>
-            <div class="car-meta">
-              <span class="car-tag">Benzin</span>
-              <span class="car-tag">Automatik</span>
-              <span class="car-tag">Sedan</span>
-              <span class="car-tag">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-price">90 KM <span>/ dan</span></div>
-              <button class="btn btn-primary inquire-btn" data-car="BMW 3 Serija 2019">Upit</button>
-            </div>
-          </div>
-        </div>
+        <!-- Side cards -->
+        <div class="side-cards">
 
-        <!-- Car 3: VW Golf -->
-        <div class="car-card">
-          <div class="car-slider" data-slider>
-            <img src="https://placehold.co/640x400/1a2e1a/ffffff?text=VW+Golf+%E2%80%94+Front" alt="VW Golf prednja strana" class="active" />
-            <img src="https://placehold.co/640x400/243624/ffffff?text=VW+Golf+%E2%80%94+Interior" alt="VW Golf unutrašnjost" />
-            <img src="https://placehold.co/640x400/2d422d/ffffff?text=VW+Golf+%E2%80%94+Side" alt="VW Golf bočna strana" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
+          <!-- BMW 3 Series -->
+          <div class="car-card" data-tags="petrol automatic sedan" data-reveal data-reveal-delay="2">
+            <div class="car-slider" data-slider>
+              <img src="https://picsum.photos/seed/bmw3a/800/520" alt="BMW 3 Serija 2019" class="active" />
+              <img src="https://picsum.photos/seed/bmw3b/800/520" alt="BMW 3 unutrašnjost" />
+              <img src="https://picsum.photos/seed/bmw3c/800/520" alt="BMW 3 bočna strana" />
+              <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+              <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">BMW 3 Serija 2019</h3>
+              <div class="car-meta">
+                <span class="car-tag">Benzin</span>
+                <span class="car-tag">Automatik</span>
+                <span class="car-tag">Sedan</span>
+                <span class="car-tag">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-price">90 KM <span>/ dan</span></div>
+                <button class="btn btn-primary inquire-btn" data-car="BMW 3 Serija 2019">Upit</button>
+              </div>
             </div>
           </div>
-          <div class="car-body">
-            <h3 class="car-name">Volkswagen Golf 2021</h3>
-            <div class="car-meta">
-              <span class="car-tag">Dizel</span>
-              <span class="car-tag">Manuelni</span>
-              <span class="car-tag">Hečbek</span>
-              <span class="car-tag">5 mjesta</span>
+
+          <!-- VW Golf -->
+          <div class="car-card" data-tags="diesel manual hatchback" data-reveal data-reveal-delay="3">
+            <div class="car-slider" data-slider>
+              <img src="https://picsum.photos/seed/golf21a/800/520" alt="Volkswagen Golf 2021" class="active" />
+              <img src="https://picsum.photos/seed/golf21b/800/520" alt="VW Golf unutrašnjost" />
+              <img src="https://picsum.photos/seed/golf21c/800/520" alt="VW Golf bočna strana" />
+              <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
+              <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+              </div>
             </div>
-            <div class="car-footer">
-              <div class="car-price">60 KM <span>/ dan</span></div>
-              <button class="btn btn-primary inquire-btn" data-car="Volkswagen Golf 2021">Upit</button>
+            <div class="car-body">
+              <h3 class="car-name">Volkswagen Golf 2021</h3>
+              <div class="car-meta">
+                <span class="car-tag">Dizel</span>
+                <span class="car-tag">Manuelni</span>
+                <span class="car-tag">Hečbek</span>
+                <span class="car-tag">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-price">60 KM <span>/ dan</span></div>
+                <button class="btn btn-primary inquire-btn" data-car="Volkswagen Golf 2021">Upit</button>
+              </div>
             </div>
           </div>
-        </div>
 
-      </div>
-
-      <div style="text-align:center; margin-top: 40px;">
-        <a href="cars.html" class="btn btn-primary">Pogledaj sva vozila</a>
-      </div>
+        </div><!-- end .side-cards -->
+      </div><!-- end .featured-grid -->
     </div>
   </section>
 
   <!-- ============ WHY US ============ -->
-  <section class="section why-us">
+  <section class="section why-us" id="o-nama">
     <div class="container">
-      <h2 class="section-title">Zašto izabrati nas?</h2>
-      <p class="section-subtitle">Povjerenje stotina klijenata širom regije.</p>
+      <div class="why-us-inner">
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">&#128663;</div>
-          <h3>Širok izbor</h3>
-          <p>Od kompaktnih gradskih automobila do premium sedana — imamo pravo vozilo za svaku potrebu.</p>
+        <!-- Left: text + CTA -->
+        <div class="why-us-left" data-reveal>
+          <span class="eyebrow">Zašto mi</span>
+          <h2>Vozite bez brige.</h2>
+          <p>
+            Naš tim brine o svakom detalju kako bi vaše iskustvo iznajmljivanja
+            bilo jednostavno, pouzdano i ugodno.
+          </p>
+          <a href="cars.html" class="btn btn-dark">Odaberi vozilo</a>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128176;</div>
-          <h3>Najbolje cijene</h3>
-          <p>Transparentne, konkurentne dnevne cijene bez skrivenih troškova. Šta vidite, to i plaćate.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128205;</div>
-          <h3>Fleksibilno preuzimanje</h3>
-          <p>Preuzimanje i vraćanje na željenu lokaciju. Jednostavno i praktično.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">&#128736;</div>
-          <h3>Redovno održavano</h3>
-          <p>Sva vozila se redovno servisiraju i peru. Vozite s povjerenjem svaki put.</p>
-        </div>
+
+        <!-- Right: feature list -->
+        <div class="feature-list">
+
+          <div class="feature-item" data-reveal data-reveal-delay="1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="7" height="7" rx="1"/>
+                <rect x="11" y="2" width="7" height="7" rx="1"/>
+                <rect x="2" y="11" width="7" height="7" rx="1"/>
+                <rect x="11" y="11" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h4>Širok izbor vozila</h4>
+              <p>Više od 50 vozila, od ekonomičnih gradskih automobila do premium sedana za svaku potrebu.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal data-reveal-delay="2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.5 2.5L17 9a1.5 1.5 0 010 2.12l-5.38 5.38A1.5 1.5 0 019.5 17L3 10.5V3.5a1 1 0 011-1h6.5z"/>
+                <circle cx="6" cy="7" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h4>Transparentne cijene</h4>
+              <p>Bez skrivenih naknada. Šta vidite u ponudi, to i plaćate — jasno, pošteno i bez iznenađenja.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal data-reveal-delay="3">
+            <div class="feature-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S5.5 10 5.5 6.5A4.5 4.5 0 0110 2z"/>
+                <circle cx="10" cy="6.5" r="1.8"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h4>Fleksibilno preuzimanje</h4>
+              <p>Preuzimanje i vraćanje na više lokacija u Sarajevu. Prilagođavamo se vašem rasporedu.</p>
+            </div>
+          </div>
+
+          <div class="feature-item" data-reveal data-reveal-delay="4">
+            <div class="feature-icon">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2L3 5v5.5c0 4 3.13 7.35 7 8.5 3.87-1.15 7-4.5 7-8.5V5L10 2z"/>
+                <path d="M7 10l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h4>Redovno održavana vozila</h4>
+              <p>Svako vozilo prolazi redovne tehničke preglede. Vozite s povjerenjem svaki put.</p>
+            </div>
+          </div>
+
+        </div><!-- end .feature-list -->
       </div>
     </div>
   </section>
@@ -193,43 +272,62 @@
   <!-- ============ CONTACT ============ -->
   <section class="section contact" id="contact">
     <div class="container">
-      <h2 class="section-title">Kontaktirajte nas</h2>
-      <p class="section-subtitle">Imate pitanje ili želite rezervaciju? Javite nam se.</p>
-
       <div class="contact-grid">
-        <!-- Info -->
-        <div class="contact-info">
-          <h3>Kontakt informacije</h3>
-          <p>Dostupni smo od ponedjeljka do subote, 8–20h. Slobodno nas pozovite ili napišite.</p>
 
-          <div class="contact-detail">
-            <div class="contact-icon">&#128222;</div>
-            <div>
-              <strong>Telefon</strong>
-              <a href="tel:+38761234567">+387 61 234 567</a>
-            </div>
-          </div>
+        <!-- Info column -->
+        <div class="contact-info" data-reveal>
+          <span class="eyebrow">Kontakt</span>
+          <h2>Pišite nam.</h2>
+          <p>
+            Naš tim je dostupan od ponedjeljka do subote, 8h&ndash;20h.
+            Slobodno nas pozovite ili pošaljite poruku.
+          </p>
+          <div class="contact-details">
 
-          <div class="contact-detail">
-            <div class="contact-icon">&#9993;</div>
-            <div>
-              <strong>E-mail</strong>
-              <a href="mailto:info@driveeasy.ba">info@driveeasy.ba</a>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 3.5C3 2.67 3.67 2 4.5 2h1.72a1 1 0 01.96.73l.8 2.82a1 1 0 01-.23 1L6.7 7.55a10.1 10.1 0 004.75 4.75l1-.92a1 1 0 011-.23l2.82.8a1 1 0 01.73.96V14.5c0 .83-.67 1.5-1.5 1.5A12.5 12.5 0 013 3.5z"/>
+                </svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Telefon</strong>
+                <a href="tel:+38761234567">+387 61 234 567</a>
+              </div>
             </div>
-          </div>
 
-          <div class="contact-detail">
-            <div class="contact-icon">&#128205;</div>
-            <div>
-              <strong>Adresa</strong>
-              <span>Ferhadija 12, Sarajevo, BiH</span>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="14" height="10" rx="1.5"/>
+                  <path d="M2 5.5l7 4.5 7-4.5"/>
+                </svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>E-mail</strong>
+                <a href="mailto:info@driveeasy.ba">info@driveeasy.ba</a>
+              </div>
             </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S4.5 10 4.5 6.5A4.5 4.5 0 019 2z"/>
+                  <circle cx="9" cy="6.5" r="1.8"/>
+                </svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Adresa</strong>
+                <span>Branka Popovića 83, Banja Luka, BiH</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Form -->
-        <div class="contact-form">
-          <form action="mailto:info@driveeasy.ba" method="post" enctype="text/plain">
+        <!-- Form column -->
+        <div class="contact-form-wrap" data-reveal data-reveal-delay="2">
+          <form action="mailto:milan.vucenovic@yahoo.com" method="post" enctype="text/plain">
             <div class="form-group">
               <label for="name">Ime i prezime</label>
               <input type="text" id="name" name="name" placeholder="npr. Amir Kovač" required />
@@ -240,11 +338,12 @@
             </div>
             <div class="form-group">
               <label for="message">Poruka</label>
-              <textarea id="message" name="message" placeholder="Recite nam koji automobil vas zanima, datumi, itd." required></textarea>
+              <textarea id="message" name="message" placeholder="Koji automobil vas zanima, datumi, pitanja..." required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Pošalji poruku</button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
@@ -254,8 +353,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-logo">Rent a car <span>MM</span></div>
-          <p>Premium usluga iznajmljivanja vozila sa najboljim cijenama i širokim izborom za svako putovanje.</p>
+          <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
+          <p>Premium iznajmljivanje vozila u Sarajevu i okolici. Pouzdano, transparentno i fleksibilno.</p>
         </div>
         <div class="footer-col">
           <h4>Navigacija</h4>
@@ -271,6 +370,7 @@
             <li><a href="tel:+38761234567">+387 61 234 567</a></li>
             <li><a href="mailto:info@driveeasy.ba">info@driveeasy.ba</a></li>
             <li>Ferhadija 12, Sarajevo</li>
+            <li>Pon&ndash;Sub, 8h&ndash;20h</li>
           </ul>
         </div>
       </div>
@@ -301,7 +401,7 @@
         </div>
         <div class="form-group">
           <label for="inqMessage">Poruka</label>
-          <textarea id="inqMessage" placeholder="Recite nam datume iznajmljivanja, pitanja, itd." required></textarea>
+          <textarea id="inqMessage" placeholder="Datumi iznajmljivanja, pitanja, itd." required></textarea>
         </div>
         <p class="modal-success" id="modalSuccess">Vaš e-mail klijent će se otvoriti. Hvala vam!</p>
         <button type="submit" class="btn btn-primary modal-submit">Pošalji upit</button>
