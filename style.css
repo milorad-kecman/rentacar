@@ -206,6 +206,28 @@ input, textarea, select { font-family: inherit; }
   font-size: 13px;
 }
 
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Form feedback — success / error */
+.form-feedback {
+  padding: 12px 16px;
+  border-radius: var(--r);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  background: #dcfce7;
+  color: #14532d;
+}
+
+.form-feedback--error {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
 .btn-block {
   width: 100%;
   justify-content: center;
@@ -264,6 +286,46 @@ input, textarea, select { font-family: inherit; }
 .nav-links .btn {
   padding: 9px 20px;
   font-size: 13px;
+}
+
+/* Language switcher */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.lang-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color var(--t-fast), background var(--t-fast);
+  font-family: var(--font);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.lang-btn:hover { color: var(--text); }
+
+.lang-btn.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Hamburger */
@@ -477,20 +539,79 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* =============================================
-   FEATURED CARS (Home) — ASYMMETRIC GRID
+   FLEET GRID (Home) — ALL VEHICLES + PAGINATION
    ============================================= */
 .featured { background: var(--bg); }
 
-.featured-grid {
+.fleet-grid {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.side-cards {
+/* Pagination */
+.fleet-pagination {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 48px;
+}
+
+.fleet-page-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--border-hard);
+  background: transparent;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast), opacity var(--t-fast);
+  font-family: var(--font);
+}
+
+.fleet-page-btn:hover:not(:disabled) {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+
+.fleet-page-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.fleet-page-nums {
+  display: flex;
+  gap: 6px;
+}
+
+.fleet-page-num {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+
+.fleet-page-num:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.fleet-page-num.active {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
 }
 
 /* =============================================
@@ -517,10 +638,6 @@ input, textarea, select { font-family: inherit; }
   background: var(--surface-2);
 }
 
-/* Featured card gets a taller image */
-.featured-card .car-slider {
-  aspect-ratio: 4 / 3;
-}
 
 .car-slider img {
   position: absolute;
@@ -1126,9 +1243,7 @@ input, textarea, select { font-family: inherit; }
     padding: calc(var(--nav-h) + 56px) 36px 80px;
   }
 
-  .featured-grid { grid-template-columns: 1fr; }
-  .side-cards { flex-direction: row; }
-  .featured-card .car-slider { aspect-ratio: 16 / 10; }
+  .fleet-grid { grid-template-columns: repeat(2, 1fr); }
 
   .why-us-inner { grid-template-columns: 1fr; gap: 48px; }
   .why-us-left > p { max-width: 100%; }
@@ -1170,8 +1285,8 @@ input, textarea, select { font-family: inherit; }
 
   .hero-actions { flex-direction: column; align-items: flex-start; }
 
-  /* Featured */
-  .side-cards { flex-direction: column; }
+  /* Fleet */
+  .fleet-grid { grid-template-columns: 1fr; }
 
   /* Filter */
   .filter-bar { position: static; }
