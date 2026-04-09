@@ -13,9 +13,9 @@
 //   {{message}}    — message body
 // =============================================
 const EMAILJS_CONFIG = {
-  publicKey:  'YOUR_PUBLIC_KEY',
-  serviceID:  'YOUR_SERVICE_ID',
-  templateID: 'YOUR_TEMPLATE_ID',
+  publicKey:  'z_SuSd7Q4rL8jVF4p',
+  serviceID:  'service_g77617o',
+  templateID: 'template_fxionw8',
 };
 
 emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
