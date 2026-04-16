@@ -10,7 +10,7 @@ const translations = {
     nav_home:     'Home',
     nav_cars:     'Cars',
     nav_contact:  'Contact',
-    nav_cta:      'Browse Fleet',
+    nav_cta:      'Browse Vehicles',
     nav_cta_rent: 'Rent Now',
 
     // Hero
@@ -28,7 +28,7 @@ const translations = {
 
     // Fleet section
     featured_eyebrow: 'Vehicles',
-    featured_heading: 'Our fleet',
+    featured_heading: 'Our vehicles',
     featured_all:     'All cars',
 
     // Why us
@@ -80,7 +80,7 @@ const translations = {
 
     // Cars page
     page_eyebrow: 'Our offer',
-    page_heading:  'Our fleet',
+    page_heading:  'Our vehicles',
     page_desc:     'Well-maintained vehicles at transparent prices. Filter by transmission or fuel type.',
 
     // Filter bar
@@ -101,6 +101,16 @@ const translations = {
     tag_seats:     '5 seats',
     tag_per_day:   '/ day',
     tag_inquiry:   'Inquiry',
+
+    // Pricing tiers
+    price_1_2:     '1–2 days',
+    price_3_6:     '3–6 days',
+    price_7_30:    '7–30 days',
+
+    // Lightbox
+    lightbox_close: 'Close',
+    lightbox_prev:  'Previous',
+    lightbox_next:  'Next',
 
     // Footer
     footer_desc:      'Premium vehicle rental in Banja Luka and surroundings. Reliable, transparent and flexible.',
@@ -143,7 +153,7 @@ const translations = {
 
     // Fleet section
     featured_eyebrow: 'Vozila',
-    featured_heading: 'Naša flota',
+    featured_heading: 'Naša vozila',
     featured_all:     'Sva vozila',
 
     // Why us
@@ -196,7 +206,7 @@ const translations = {
     // Cars page
     page_eyebrow: 'Naša ponuda',
     page_heading:  'Naša flota',
-    page_desc:     'Dobro održavana vozila po transparentnim cijenama. Filtrišite po tipu pogona ili mjenjača.',
+    page_desc:     'Dobro održavana vozila po transparentnim cijenama. Filtriraj po tipu pogona ili mjenjača.',
 
     // Filter bar
     filter_label:     'Filtriraj',
@@ -217,6 +227,16 @@ const translations = {
     tag_per_day:   '/ dan',
     tag_inquiry:   'Upit',
 
+    // Pricing tiers
+    price_1_2:     '1–2 dana',
+    price_3_6:     '3–6 dana',
+    price_7_30:    '7–30 dana',
+
+    // Lightbox
+    lightbox_close: 'Zatvori',
+    lightbox_prev:  'Prethodna',
+    lightbox_next:  'Sljedeća',
+
     // Footer
     footer_desc:      'Premium iznajmljivanje vozila u Banja Luci i okolici. Pouzdano, transparentno i fleksibilno.',
     footer_nav_h:     'Navigacija',
@@ -232,7 +252,7 @@ const translations = {
 
     // Email template internals
     phone_not_provided: 'Nije navedeno',
-    general_inquiry:    'Opći upit',
+    general_inquiry:    'Opšti upit',
   },
 };
 
@@ -257,6 +277,12 @@ const translations = {
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
       const val = t(el.dataset.i18nPh);
       if (val) el.placeholder = val;
+    });
+
+    // Aria-label attributes
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const val = t(el.dataset.i18nAria);
+      if (val) el.setAttribute('aria-label', val);
     });
 
     // Sync lang-btn active state across all pages

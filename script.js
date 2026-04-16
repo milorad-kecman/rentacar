@@ -148,7 +148,7 @@ if (modal) {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
 });
 
 if (inquiryForm && modalSubmit) {
@@ -284,6 +284,100 @@ if (contactForm && contactSubmit) {
 
   // Initialise — show first page without scrolling
   goTo(1, false);
+})();
+
+// =============================================
+// LIGHTBOX
+// =============================================
+(function () {
+  const overlay  = document.getElementById('lightbox');
+  if (!overlay) return;
+
+  const imgEl    = document.getElementById('lightboxImg');
+  const prevBtn  = document.getElementById('lightboxPrev');
+  const nextBtn  = document.getElementById('lightboxNext');
+  const closeBtn = document.getElementById('lightboxClose');
+  const dotsEl   = document.getElementById('lightboxDots');
+  const counter  = document.getElementById('lightboxCounter');
+
+  let slides  = []; // [{ src, alt }, ...]
+  let current = 0;
+
+  function renderDots() {
+    dotsEl.innerHTML = '';
+    slides.forEach((_, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'lightbox-dot' + (i === current ? ' active' : '');
+      btn.setAttribute('aria-label', `Slajd ${i + 1}`);
+      btn.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(btn);
+    });
+    // Hide nav arrows when there's only one image
+    const single = slides.length <= 1;
+    prevBtn.style.display = single ? 'none' : '';
+    nextBtn.style.display = single ? 'none' : '';
+    dotsEl.style.display  = single ? 'none' : '';
+  }
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    imgEl.style.opacity = '0';
+    // Swap src after brief fade so the image doesn't "pop"
+    setTimeout(() => {
+      imgEl.src = slides[current].src;
+      imgEl.alt = slides[current].alt;
+      imgEl.style.opacity = '1';
+    }, 120);
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    dotsEl.querySelectorAll('.lightbox-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  }
+
+  function open(sliderEl, startIndex) {
+    const imgs = sliderEl.querySelectorAll('img');
+    slides  = Array.from(imgs).map(img => ({ src: img.src, alt: img.alt }));
+    current = startIndex;
+    renderDots();
+    // Set initial image without fade
+    imgEl.src = slides[current].src;
+    imgEl.alt = slides[current].alt;
+    imgEl.style.opacity = '1';
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    dotsEl.querySelectorAll('.lightbox-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { imgEl.src = ''; }, 280);
+  }
+
+  // Click on slider area (not on nav buttons or dots) opens lightbox
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+    slider.addEventListener('click', e => {
+      if (e.target.closest('.slider-btn') || e.target.closest('.slider-dots')) return;
+      const imgs   = slider.querySelectorAll('img');
+      const active = Array.from(imgs).findIndex(img => img.classList.contains('active'));
+      open(slider, active >= 0 ? active : 0);
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+    if (e.key === 'ArrowRight') goTo(current + 1);
+  });
 })();
 
 // =============================================
