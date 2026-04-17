@@ -145,7 +145,7 @@ const translations = {
     hero_desc:            'Iznajmite vozilo iz naše dobro održavane flote. Transparentne dnevne cijene, bez skrivenih naknada i uz fleksibilne opcije preuzimanja.',
     hero_btn_fleet:       'Pregledaj vozila',
     hero_btn_contact:     'Kontaktirajte nas',
-    hero_stat_vehicles:   'Vozila u floti',
+    hero_stat_vehicles:   'Vozila u ponudi',
     hero_stat_clients:    'Zadovoljnih klijenata',
     hero_stat_experience: 'Na tržištu',
     hero_badge_from:      'od',
