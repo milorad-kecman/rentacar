@@ -45,6 +45,12 @@ const translations = {
     why_f4_h:    'Regularly maintained',
     why_f4_p:    'Every vehicle undergoes regular technical inspections. Drive with confidence every time.',
 
+    // Car inclusions / hero trust badges
+    incl_label:              'All vehicles come with:',
+    incl_insurance:          'Full insurance',
+    vehicle_incl_insurance:  'Fully insured',
+    incl_roadside:           'Roadside assistance',
+
     // Contact section
     contact_eyebrow:     'Contact',
     contact_heading:     'Write to us.',
@@ -52,6 +58,7 @@ const translations = {
     contact_lbl_phone:   'Phone',
     contact_lbl_email:   'E-mail',
     contact_lbl_address: 'Address',
+    contact_maps_hint:   'Click to open in maps',
     contact_lbl_name:    'Full name',
     contact_lbl_emailf:  'E-mail address',
     contact_lbl_msg:     'Message',
@@ -135,14 +142,14 @@ const translations = {
     nav_home:     'Početna',
     nav_cars:     'Vozila',
     nav_contact:  'Kontakt',
-    nav_cta:      'Pregledaj flotu',
+    nav_cta:      'Pregledaj vozila',
     nav_cta_rent: 'Iznajmi odmah',
 
     // Hero
     hero_eyebrow:         'Rent a car MM — Banja Luka, BiH',
     hero_title_1:         'Pravi auto,',
     hero_title_2:         'prave cijene.',
-    hero_desc:            'Iznajmite vozilo iz naše dobro održavane flote. Transparentne dnevne cijene, bez skrivenih naknada i uz fleksibilne opcije preuzimanja.',
+    hero_desc:            'Iznajmite redovno održavano vozilo iz naše ponude. Transparentne dnevne cijene, bez skrivenih naknada i uz fleksibilne opcije preuzimanja.',
     hero_btn_fleet:       'Pregledaj vozila',
     hero_btn_contact:     'Kontaktirajte nas',
     hero_stat_vehicles:   'Vozila u ponudi',
@@ -170,6 +177,11 @@ const translations = {
     why_f4_h:    'Redovno održavana vozila',
     why_f4_p:    'Svako vozilo prolazi redovne tehničke preglede. Vozite s povjerenjem svaki put.',
 
+    incl_label:              'Sva vozila dolaze sa:',
+    incl_insurance:          'Kasko osiguranjem',
+    vehicle_incl_insurance:  'Kasko osigurano',
+    incl_roadside:           'Pomoć na putu',
+
     // Contact section
     contact_eyebrow:     'Kontakt',
     contact_heading:     'Pišite nam.',
@@ -177,6 +189,7 @@ const translations = {
     contact_lbl_phone:   'Telefon',
     contact_lbl_email:   'E-mail',
     contact_lbl_address: 'Adresa',
+    contact_maps_hint:   'Klikni da otvoriš u mapama',
     contact_lbl_name:    'Ime i prezime',
     contact_lbl_emailf:  'E-mail adresa',
     contact_lbl_msg:     'Poruka',
@@ -205,7 +218,7 @@ const translations = {
 
     // Cars page
     page_eyebrow: 'Naša ponuda',
-    page_heading:  'Naša flota',
+    page_heading:  'Naša vozila',
     page_desc:     'Dobro održavana vozila po transparentnim cijenama. Filtriraj po tipu pogona ili mjenjača.',
 
     // Filter bar
