@@ -119,7 +119,7 @@ const translations = {
     footer_home:      'Home',
     footer_cars:      'Cars',
     footer_contact:   'Contact',
-    footer_hours:     'Mon–Sat, 8am–8pm',
+    footer_hours:     'Mon-Sun, 9:00–21:00',
     footer_copy:      '© 2026 Rent a car MM. All rights reserved.',
 
     // Loading state
@@ -173,14 +173,14 @@ const translations = {
     // Contact section
     contact_eyebrow:     'Kontakt',
     contact_heading:     'Pišite nam.',
-    contact_desc:        'Naš tim je dostupan od ponedjeljka do subote, 8h–20h. Slobodno nas pozovite ili pošaljite poruku.',
+    contact_desc:        'Naš tim je dostupan od ponedjeljka do nedjelje, 9:00–21:00. Slobodno nas pozovite ili pošaljite poruku.',
     contact_lbl_phone:   'Telefon',
     contact_lbl_email:   'E-mail',
     contact_lbl_address: 'Adresa',
     contact_lbl_name:    'Ime i prezime',
     contact_lbl_emailf:  'E-mail adresa',
     contact_lbl_msg:     'Poruka',
-    contact_ph_name:     'npr. Amir Kovač',
+    contact_ph_name:     'npr. Marko Ćetković',
     contact_ph_email:    'vas@email.com',
     contact_ph_msg:      'Koji automobil vas zanima, datumi, pitanja...',
     contact_submit:      'Pošalji poruku',
@@ -195,9 +195,9 @@ const translations = {
     modal_lbl_phone:  'Telefon',
     modal_phone_opt:  '(opciono)',
     modal_lbl_msg:    'Poruka',
-    modal_ph_name:    'npr. Amir Kovač',
+    modal_ph_name:    'npr. Marko Ćetković',
     modal_ph_email:   'vas@email.com',
-    modal_ph_phone:   '+387 61 000 000',
+    modal_ph_phone:   '+387 65 000 000',
     modal_ph_msg:     'Datumi iznajmljivanja, pitanja, itd.',
     modal_submit:     'Pošalji upit',
     modal_success:    'Upit je uspješno poslan. Kontaktiraćemo vas uskoro!',
@@ -244,7 +244,7 @@ const translations = {
     footer_home:      'Početna',
     footer_cars:      'Vozila',
     footer_contact:   'Kontakt',
-    footer_hours:     'Pon–Sub, 8h–20h',
+    footer_hours:     'Pon-Ned, 9:00–21:00',
     footer_copy:      '© 2026 Rent a car MM. Sva prava zadržana.',
 
     // Loading state

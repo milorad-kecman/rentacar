@@ -104,11 +104,8 @@ document.querySelectorAll('[data-slider]').forEach(slider => {
     dot.addEventListener('click', () => goTo(i));
   });
 
-  let autoPlay = setInterval(() => goTo(current + 1), 4000);
-  slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  slider.addEventListener('mouseleave', () => {
-    autoPlay = setInterval(() => goTo(current + 1), 4000);
-  });
+  slider.addEventListener('mouseenter', () => { if (images.length > 1) goTo(1); });
+  slider.addEventListener('mouseleave', () => goTo(0));
 });
 
 // =============================================
@@ -383,19 +380,22 @@ if (contactForm && contactSubmit) {
 // =============================================
 // FILTER BUTTONS (cars.html)
 // =============================================
-const filterBtns = document.querySelectorAll('.filter-btn');
-const carCards   = document.querySelectorAll('#carsGrid .car-card');
+(function () {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const carCards   = document.querySelectorAll('#carsGrid .car-card');
+  if (!filterBtns.length || !carCards.length) return;
 
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    const filter = btn.dataset.filter;
+      const filter = btn.dataset.filter;
 
-    carCards.forEach(card => {
-      const tags = card.dataset.tags || '';
-      card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+      carCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+      });
     });
   });
-});
+})();
