@@ -108,6 +108,8 @@ const translations = {
     tag_seats:     '5 seats',
     tag_per_day:   '/ day',
     tag_inquiry:   'Inquiry',
+    color_black:   'Black',
+    color_white:   'White',
 
     // Pricing tiers
     price_1_2:     '1–2 days',
@@ -239,6 +241,8 @@ const translations = {
     tag_seats:     '5 mjesta',
     tag_per_day:   '/ dan',
     tag_inquiry:   'Upit',
+    color_black:   'Crna',
+    color_white:   'Bijela',
 
     // Pricing tiers
     price_1_2:     '1–2 dana',

@@ -133,7 +133,10 @@ function closeModal() {
 }
 
 document.querySelectorAll('.inquire-btn').forEach(btn => {
-  btn.addEventListener('click', () => openModal(btn.dataset.car));
+  btn.addEventListener('click', () => {
+    const name = btn.closest('.car-card')?.querySelector('.car-name')?.textContent.trim() || btn.dataset.car;
+    openModal(name);
+  });
 });
 
 if (modalClose) modalClose.addEventListener('click', closeModal);
@@ -208,7 +211,7 @@ if (contactForm && contactSubmit) {
         car_name:   (window.i18n ? window.i18n.t('general_inquiry') : 'General inquiry'),
         from_name:  name,
         from_email: email,
-        phone:      'Nije navedeno',
+        phone:      window.i18n ? window.i18n.t('phone_not_provided') : 'N/A',
         message,
       });
 
@@ -375,6 +378,17 @@ if (contactForm && contactSubmit) {
     if (e.key === 'ArrowLeft')  goTo(current - 1);
     if (e.key === 'ArrowRight') goTo(current + 1);
   });
+
+  let touchStartX = 0;
+  let touchActive = false;
+  overlay.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; touchActive = true; }, { passive: true });
+  overlay.addEventListener('touchcancel', () => { touchActive = false; }, { passive: true });
+  overlay.addEventListener('touchend', e => {
+    if (!touchActive || !overlay.classList.contains('open')) return;
+    touchActive = false;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+  }, { passive: true });
 })();
 
 // =============================================

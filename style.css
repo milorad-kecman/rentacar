@@ -698,6 +698,7 @@ input, textarea, select { font-family: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1603,6 +1604,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 @media (max-width: 768px) {
-  .lightbox-nav { display: none; }
+  .lightbox-nav { opacity: 1; }
   .lightbox-img-wrap { max-width: 94vw; }
+  .car-slider .slider-btn { opacity: 1; pointer-events: auto; }
 }
