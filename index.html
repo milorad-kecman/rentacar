@@ -1,730 +1,1696 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rent a car MM — Banja Luka</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent a car MM — Banja Luka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
 
-  <!-- ============ NAVBAR ============ -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="index.html" class="active" data-i18n="nav_home">Početna</a>
+          </li>
+          <li><a href="#vozila" data-i18n="nav_cars">Vozila</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active" data-i18n="nav_home">Početna</a></li>
-        <li><a href="#vozila" data-i18n="nav_cars">Vozila</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <div class="lang-switcher" role="group" aria-label="Language / Jezik">
-          <button class="lang-btn active" data-lang="sr" aria-pressed="true">🇷🇸 SR</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">🇬🇧 EN</button>
+        <div class="nav-actions">
+          <div class="lang-switcher" role="group" aria-label="Language / Jezik">
+            <button class="lang-btn active" data-lang="sr" aria-pressed="true">
+              🇷🇸 SR
+            </button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">
+              🇬🇧 EN
+            </button>
+          </div>
+          <button class="nav-toggle" id="navToggle" aria-label="Otvori meni">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Otvori meni">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- ============ HERO — SPLIT SCREEN ============ -->
-  <section class="hero">
+    <!-- ============ HERO — SPLIT SCREEN ============ -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-content">
+          <span class="hero-eyebrow" data-i18n="hero_eyebrow"
+            >Rent a car MM — Banja Luka, BiH</span
+          >
+          <h1>
+            <span data-i18n="hero_title_1">Pravi auto,</span><br />
+            <em data-i18n="hero_title_2">prave cijene.</em>
+          </h1>
+          <p class="hero-desc" data-i18n="hero_desc">
+            Iznajmite vozilo iz naše dobro održavane flote. Transparentne dnevne
+            cijene, bez skrivenih naknada i uz fleksibilne opcije preuzimanja.
+          </p>
+          <div class="hero-actions">
+            <a href="#vozila" class="btn btn-primary" data-i18n="hero_btn_fleet"
+              >Pregledaj vozila</a
+            >
+            <a
+              href="#contact"
+              class="btn btn-ghost"
+              data-i18n="hero_btn_contact"
+              >Kontaktirajte nas</a
+            >
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>10+</strong>
+              <span data-i18n="hero_stat_vehicles">Vozila u ponudi.</span>
+            </div>
+            <div class="stat-item">
+              <strong>500+</strong>
+              <span data-i18n="hero_stat_clients">Zadovoljnih klijenata</span>
+            </div>
+            <div class="stat-item">
+              <strong>5 god</strong>
+              <span data-i18n="hero_stat_experience">Na tržištu</span>
+            </div>
+          </div>
+          <div class="hero-trust-badges">
+            <p class="hero-trust-label" data-i18n="incl_label">
+              Sva vozila dolaze sa:
+            </p>
+            <div class="hero-trust-cards">
+              <div class="hero-trust-badge">
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                  />
+                  <path d="M5.5 8l1.5 1.5 3-3" />
+                </svg>
+                <span data-i18n="incl_insurance">Kasko osiguranjem</span>
+              </div>
+              <div class="hero-trust-badge">
+                <svg
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="5" cy="12" r="1.5" />
+                  <circle cx="12" cy="12" r="1.5" />
+                  <path d="M1.5 9h10l.5 3H1.5V9z" />
+                  <path d="M11.5 10.5L13 7.5h1.5" />
+                </svg>
+                <span data-i18n="incl_roadside">Pomoć na putu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="hero-left">
-      <div class="hero-content">
-        <span class="hero-eyebrow" data-i18n="hero_eyebrow">Rent a car MM — Banja Luka, BiH</span>
-        <h1>
-          <span data-i18n="hero_title_1">Pravi auto,</span><br>
-          <em data-i18n="hero_title_2">prave cijene.</em>
-        </h1>
-        <p class="hero-desc" data-i18n="hero_desc">
-          Iznajmite vozilo iz naše dobro održavane flote. Transparentne dnevne cijene,
-          bez skrivenih naknada i uz fleksibilne opcije preuzimanja.
+      <div class="hero-right">
+        <img
+          src="images/hero.webp"
+          alt="Premium vozila za iznajmljivanje"
+          loading="eager"
+        />
+        <div class="hero-right-overlay"></div>
+        <div class="hero-badge">
+          <span class="badge-from" data-i18n="hero_badge_from">od</span>
+          <span class="badge-price">55 KM</span>
+          <span class="badge-per" data-i18n="hero_badge_per">&nbsp;/ dan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLEET — ALL VEHICLES ============ -->
+    <section class="section featured" id="vozila">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="section-head-left">
+            <span class="eyebrow" data-i18n="featured_eyebrow">Vozila</span>
+            <h2 data-i18n="featured_heading">Naša vozila</h2>
+          </div>
+        </div>
+
+        <div class="fleet-grid" id="featuredGrid">
+          <!-- 1: Audi A4 -->
+          <div class="car-card" data-tags="diesel manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/skoda-octavia/skoda_prednja.webp"
+                alt="Skoda prednja"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-octavia/skoda_naslovna.webp"
+                alt="Skoda naslovna"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-octavia/skoda_zadnja.webp"
+                alt="Skoda zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-octavia/skoda_unutrasnjost.webp"
+                alt="Skoda unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Skoda Octavia 2021</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">120 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">100 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">85 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Skoda Octavia 2021"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2: Citroen C5 Aircross -->
+          <div class="car-card" data-tags="diesel automatic">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/citroen-c5-aircross/citroen-prednja.webp"
+                alt="Citroen C5 Aircross prednja"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c5-aircross/citroen-bocna.webp"
+                alt="Citroen C5 Aircross bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c5-aircross/citroen-bocna2.webp"
+                alt="Citroen C5 Aircross bočna 2"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c5-aircross/citroen-zadnja.webp"
+                alt="Citroen C5 Aircross zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c5-aircross/citroen-unutrasnja.webp"
+                alt="Citroen C5 Aircross unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+                <button class="slider-dot" aria-label="Slajd 5"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Citroen C5 Aircross 2020</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_automatic">Automatik</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">120 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">95 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">90 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Citroen C5 Aircross 2020"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3: Mercedes B-Klasa -->
+          <div class="car-card" data-tags="diesel automatic">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/mercedes-b-klasa-crna/mercedes-crna-naslovna.webp"
+                alt="Mercedes B-Klasa naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-crna/mercedes-crna-bocna.webp"
+                alt="Mercedes B-Klasa bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-crna/mercedes-crna-zadnja.webp"
+                alt="Mercedes B-Klasa zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-crna/mercedes-crna-unutrasnjost.webp"
+                alt="Mercedes B-Klasa unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">
+                Mercedes B-Klasa 2017 (<span data-i18n="color_black">Crna</span
+                >)
+              </h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_automatic">Automatik</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">80 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">70 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">65 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Mercedes B-Klasa 2017 (Crna)"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4: Volkswagen Golf -->
+          <div class="car-card" data-tags="diesel manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/volkswagen-golf-dsg7/golf-prednja.webp"
+                alt="VW Golf DSG7 prednja"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/volkswagen-golf-dsg7/golf-bocna.webp"
+                alt="VW Golf DSG7 bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/volkswagen-golf-dsg7/golf-zadnja.webp"
+                alt="VW Golf DSG7 zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/volkswagen-golf-dsg7/golf-unutrasnjost.webp"
+                alt="VW Golf DSG7 unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Volkswagen Golf DSG7 2020</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">120 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">90 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">80 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Volkswagen Golf DSG7 2020"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5: Mercedes B-Klasa (Bijela) -->
+          <div class="car-card" data-tags="diesel automatic">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-naslovna.webp"
+                alt="Mercedes B-Klasa bijela naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-bocna.webp"
+                alt="Mercedes B-Klasa bijela bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-zadnja.webp"
+                alt="Mercedes B-Klasa bijela zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-unutrasnjost.webp"
+                alt="Mercedes B-Klasa bijela unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">
+                Mercedes B-Klasa 2017 (<span data-i18n="color_white"
+                  >Bijela</span
+                >)
+              </h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_automatic">Automatik</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">80 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">70 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">65 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Mercedes B-Klasa 2017 (Bijela)"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6: Citroen C3 -->
+          <div class="car-card" data-tags="diesel manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/citroen-c3/citreon-c3-naslovna.webp"
+                alt="Citroen C3 naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c3/citreon-c3-prednja.webp"
+                alt="Citroen C3 prednja"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c3/citreon-c3-bocna.webp"
+                alt="Citroen C3 bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c3/citreon-c3-bocna2.webp"
+                alt="Citroen C3 bočna 2"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c3/citreon-c3-zadnja.webp"
+                alt="Citroen C3 zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/citroen-c3/citroen-c3-unutrasnja.webp"
+                alt="Citroen C3 unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+                <button class="slider-dot" aria-label="Slajd 5"></button>
+                <button class="slider-dot" aria-label="Slajd 6"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Citroen C3 2021</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">70 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">60 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">55 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Citroen C3 2021"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7: Peugeot 208 -->
+          <div class="car-card" data-tags="diesel manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/peugeot-208/peugeot-naslovna.webp"
+                alt="Peugeot 208 naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/peugeot-208/peugeot-bocna.webp"
+                alt="Peugeot 208 bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/peugeot-208/peugeot-zadnja.webp"
+                alt="Peugeot 208 zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/peugeot-208/peugeot-unutrasnjost.webp"
+                alt="Peugeot 208 unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Peugeot 208 2021</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">70 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">60 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">55 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Peugeot 208 2021"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8: Škoda Fabia -->
+          <div class="car-card" data-tags="petrol manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/skoda-fabia/fabia-naslovna.webp"
+                alt="Škoda Fabia naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-fabia/fabia-bocna.webp"
+                alt="Škoda Fabia bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-fabia/fabia-bocna2.webp"
+                alt="Škoda Fabia bočna 2"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-fabia/fabia-zadnja.webp"
+                alt="Škoda Fabia zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/skoda-fabia/fabia-unutrasnja.webp"
+                alt="Škoda Fabia unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+                <button class="slider-dot" aria-label="Slajd 5"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Škoda Fabia 2021</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_petrol">Benzin</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">65 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">60 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">55 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Škoda Fabia 2021"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9: Renault Clio -->
+          <div class="car-card" data-tags="diesel manual">
+            <div class="car-slider" data-slider>
+              <img
+                src="images/renault-clio/renault-naslovna.webp"
+                alt="Renault Clio naslovna"
+                class="active"
+                loading="lazy"
+              />
+              <img
+                src="images/renault-clio/renault-bocna.webp"
+                alt="Renault Clio bočna"
+                loading="lazy"
+              />
+              <img
+                src="images/renault-clio/reanult-bocna2.webp"
+                alt="Renault Clio bočna 2"
+                loading="lazy"
+              />
+              <img
+                src="images/renault-clio/renault-zadnja.webp"
+                alt="Renault Clio zadnja"
+                loading="lazy"
+              />
+              <img
+                src="images/renault-clio/renault-unutrasnjost.webp"
+                alt="Renault Clio unutrašnjost"
+                loading="lazy"
+              />
+              <button class="slider-btn prev" aria-label="Prethodna">
+                &#8249;
+              </button>
+              <button class="slider-btn next" aria-label="Sljedeća">
+                &#8250;
+              </button>
+              <div class="slider-dots">
+                <button class="slider-dot active" aria-label="Slajd 1"></button>
+                <button class="slider-dot" aria-label="Slajd 2"></button>
+                <button class="slider-dot" aria-label="Slajd 3"></button>
+                <button class="slider-dot" aria-label="Slajd 4"></button>
+                <button class="slider-dot" aria-label="Slajd 5"></button>
+              </div>
+            </div>
+            <div class="car-body">
+              <h3 class="car-name">Renault Clio 2019</h3>
+              <div class="car-meta">
+                <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
+                <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
+                <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
+              </div>
+              <div class="car-footer">
+                <div class="car-pricing">
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_1_2"
+                      >1–2 dana</span
+                    ><span class="price-tier-price">70 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_3_6"
+                      >3–6 dana</span
+                    ><span class="price-tier-price">60 KM</span>
+                  </div>
+                  <div class="price-tier">
+                    <span class="price-tier-days" data-i18n="price_7_30"
+                      >7–30 dana</span
+                    ><span class="price-tier-price">55 KM</span>
+                  </div>
+                </div>
+
+                <div class="car-inclusions">
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"
+                      />
+                      <path d="M5.5 8l1.5 1.5 3-3" /></svg
+                    ><span data-i18n="vehicle_incl_insurance"
+                      >Kasko osigurano</span
+                    ></span
+                  >
+                  <span class="car-inclusion"
+                    ><svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="5" cy="12" r="1.5" />
+                      <circle cx="12" cy="12" r="1.5" />
+                      <path d="M1.5 9h10l.5 3H1.5V9z" />
+                      <path d="M11.5 10.5L13 7.5h1.5" /></svg
+                    ><span data-i18n="incl_roadside">Pomoć na putu</span></span
+                  >
+                </div>
+                <button
+                  class="btn btn-primary inquire-btn"
+                  data-car="Renault Clio 2019"
+                  data-i18n="tag_inquiry"
+                >
+                  Upit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="fleet-pagination" id="fleetPagination">
+          <button
+            class="fleet-page-btn"
+            id="fleetPrev"
+            aria-label="Prethodna stranica"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M10 4L6 8l4 4" />
+            </svg>
+          </button>
+          <div class="fleet-page-nums" id="fleetPageNums"></div>
+          <button
+            class="fleet-page-btn"
+            id="fleetNext"
+            aria-label="Sljedeća stranica"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 4l4 4-4 4" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section why-us" id="o-nama">
+      <div class="container">
+        <div class="why-us-inner">
+          <div class="why-us-left" data-reveal>
+            <span class="eyebrow" data-i18n="why_eyebrow">Zašto mi</span>
+            <h2 data-i18n="why_heading">Vozite bez brige.</h2>
+            <p data-i18n="why_desc">
+              Naš tim brine o svakom detalju kako bi vaše iskustvo
+              iznajmljivanja bilo jednostavno, pouzdano i ugodno.
+            </p>
+            <a href="#vozila" class="btn btn-dark" data-i18n="why_btn"
+              >Odaberi vozilo</a
+            >
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item" data-reveal data-reveal-delay="1">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="7" height="7" rx="1" />
+                  <rect x="11" y="2" width="7" height="7" rx="1" />
+                  <rect x="2" y="11" width="7" height="7" rx="1" />
+                  <rect x="11" y="11" width="7" height="7" rx="1" />
+                </svg>
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="why_f1_h">Širok izbor vozila</h4>
+                <p data-i18n="why_f1_p">
+                  Više od 10 vozila, od ekonomičnih gradskih automobila do
+                  premium vozila za svaku potrebu.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item" data-reveal data-reveal-delay="2">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.5 2.5L17 9a1.5 1.5 0 010 2.12l-5.38 5.38A1.5 1.5 0 019.5 17L3 10.5V3.5a1 1 0 011-1h6.5z"
+                  />
+                  <circle
+                    cx="6"
+                    cy="7"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="why_f2_h">Transparentne cijene</h4>
+                <p data-i18n="why_f2_p">
+                  Bez skrivenih naknada. Šta vidite u ponudi, to i plaćate —
+                  jasno, pošteno i bez iznenađenja.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item" data-reveal data-reveal-delay="3">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S5.5 10 5.5 6.5A4.5 4.5 0 0110 2z"
+                  />
+                  <circle cx="10" cy="6.5" r="1.8" />
+                </svg>
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="why_f3_h">Fleksibilno preuzimanje</h4>
+                <p data-i18n="why_f3_p">
+                  Preuzimanje i vraćanje na više lokacija. Prilagođavamo se
+                  vašem rasporedu.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item" data-reveal data-reveal-delay="4">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10 2L3 5v5.5c0 4 3.13 7.35 7 8.5 3.87-1.15 7-4.5 7-8.5V5L10 2z"
+                  />
+                  <path d="M7 10l2 2 4-4" />
+                </svg>
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="why_f4_h">Redovno održavana vozila</h4>
+                <p data-i18n="why_f4_p">
+                  Svako vozilo prolazi redovne tehničke preglede. Vozite s
+                  povjerenjem svaki put.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info" data-reveal>
+            <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
+            <h2 data-i18n="contact_heading">Pišite nam.</h2>
+            <p data-i18n="contact_desc">
+              Naš tim je dostupan od ponedjeljka do subote, 8h&ndash;20h.
+              Slobodno nas pozovite ili pošaljite poruku.
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 3.5C3 2.67 3.67 2 4.5 2h1.72a1 1 0 01.96.73l.8 2.82a1 1 0 01-.23 1L6.7 7.55a10.1 10.1 0 004.75 4.75l1-.92a1 1 0 011-.23l2.82.8a1 1 0 01.73.96V14.5c0 .83-.67 1.5-1.5 1.5A12.5 12.5 0 013 3.5z"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong data-i18n="contact_lbl_phone">Telefon</strong>
+                  <a href="tel:+38765516167">+387 65 516 167</a>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="2" y="4" width="14" height="10" rx="1.5" />
+                    <path d="M2 5.5l7 4.5 7-4.5" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong data-i18n="contact_lbl_email">E-mail</strong>
+                  <a href="mailto:mmautosalon69@gmail.com"
+                    >mmautosalon69@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <a
+                class="contact-detail contact-detail--link"
+                href="https://maps.google.com/?q=Branka+Popovića+83,+Banja+Luka,+BiH"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M9 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S4.5 10 4.5 6.5A4.5 4.5 0 019 2z"
+                    />
+                    <circle cx="9" cy="6.5" r="1.8" />
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <strong data-i18n="contact_lbl_address">Adresa</strong>
+                  <span>Branka Popovića 83, Banja Luka, BiH</span>
+                </div>
+                <span class="maps-hint" data-i18n="contact_maps_hint"
+                  >Klikni da otvoriš u mapama</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap" data-reveal data-reveal-delay="2">
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="name" data-i18n="contact_lbl_name"
+                  >Ime i prezime</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  data-i18n-ph="contact_ph_name"
+                  placeholder="npr. Marko Ćetković"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="contact_lbl_emailf"
+                  >E-mail adresa</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  data-i18n-ph="contact_ph_email"
+                  placeholder="vas@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="contact_lbl_msg">Poruka</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  data-i18n-ph="contact_ph_msg"
+                  placeholder="Koji automobil vas zanima, datumi, pitanja..."
+                  required
+                ></textarea>
+              </div>
+              <div
+                class="form-feedback"
+                id="contactSuccess"
+                style="display: none"
+                data-i18n="contact_success"
+              >
+                Poruka je uspješno poslana. Hvala vam!
+              </div>
+              <div
+                class="form-feedback form-feedback--error"
+                id="contactError"
+                style="display: none"
+                data-i18n="contact_error"
+              >
+                Greška pri slanju. Molimo pokušajte ponovo.
+              </div>
+              <button
+                type="submit"
+                id="contactSubmit"
+                class="btn btn-primary"
+                data-i18n="contact_submit"
+              >
+                Pošalji poruku
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
+            <p data-i18n="footer_desc">
+              Premium iznajmljivanje vozila u Banja Luci i okolici. Pouzdano,
+              transparentno i fleksibilno.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_nav_h">Navigacija</h4>
+            <ul>
+              <li><a href="index.html" data-i18n="footer_home">Početna</a></li>
+              <li><a href="#vozila" data-i18n="footer_cars">Vozila</a></li>
+              <li><a href="#contact" data-i18n="footer_contact">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 data-i18n="footer_contact_h">Kontakt</h4>
+            <ul>
+              <li><a href="tel:+38765516167">+387 65 516 167</a></li>
+              <li>
+                <a href="mailto:mmautosalon69@gmail.com"
+                  >mmautosalon69@gmail.com</a
+                >
+              </li>
+              <li>Branka Popovića 83, Banja Luka</li>
+              <li data-i18n="footer_hours">Pon&ndash;Sub, 8h&ndash;20h</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom" data-i18n="footer_copy">
+          &copy; 2026 Rent a car MM. Sva prava zadržana.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ UPIT MODAL ============ -->
+    <div
+      class="modal-overlay"
+      id="inquiryModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Zatvori">
+          &times;
+        </button>
+        <h2 class="modal-title" id="modalTitle" data-i18n="modal_title">
+          Pošalji upit
+        </h2>
+        <p class="modal-car-label">
+          <span data-i18n="modal_car_label">Upit za:</span>
+          <strong id="modalCarName"></strong>
         </p>
-        <div class="hero-actions">
-          <a href="#vozila" class="btn btn-primary" data-i18n="hero_btn_fleet">Pregledaj vozila</a>
-          <a href="#contact" class="btn btn-ghost" data-i18n="hero_btn_contact">Kontaktirajte nas</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <strong>10+</strong>
-            <span data-i18n="hero_stat_vehicles">Vozila u ponudi.</span>
+        <form id="inquiryForm" novalidate>
+          <div class="form-group">
+            <label for="inqName" data-i18n="modal_lbl_name"
+              >Ime i prezime</label
+            >
+            <input
+              type="text"
+              id="inqName"
+              data-i18n-ph="modal_ph_name"
+              placeholder="npr. Marko Ćetković"
+              required
+            />
           </div>
-          <div class="stat-item">
-            <strong>500+</strong>
-            <span data-i18n="hero_stat_clients">Zadovoljnih klijenata</span>
+          <div class="form-group">
+            <label for="inqEmail" data-i18n="modal_lbl_email"
+              >E-mail adresa</label
+            >
+            <input
+              type="email"
+              id="inqEmail"
+              data-i18n-ph="modal_ph_email"
+              placeholder="vas@email.com"
+              required
+            />
           </div>
-          <div class="stat-item">
-            <strong>5 god</strong>
-            <span data-i18n="hero_stat_experience">Na tržištu</span>
+          <div class="form-group">
+            <label for="inqPhone">
+              <span data-i18n="modal_lbl_phone">Telefon</span>
+              <span class="optional" data-i18n="modal_phone_opt"
+                >(opciono)</span
+              >
+            </label>
+            <input
+              type="tel"
+              id="inqPhone"
+              data-i18n-ph="modal_ph_phone"
+              placeholder="+387 65 000 000"
+            />
           </div>
-        </div>
-        <div class="hero-trust-badges">
-          <p class="hero-trust-label" data-i18n="incl_label">Sva vozila dolaze sa:</p>
-          <div class="hero-trust-cards">
-            <div class="hero-trust-badge">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg>
-              <span data-i18n="incl_insurance">Kasko osiguranjem</span>
-            </div>
-            <div class="hero-trust-badge">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg>
-              <span data-i18n="incl_roadside">Pomoć na putu</span>
-            </div>
+          <div class="form-group">
+            <label for="inqMessage" data-i18n="modal_lbl_msg">Poruka</label>
+            <textarea
+              id="inqMessage"
+              data-i18n-ph="modal_ph_msg"
+              placeholder="Datumi iznajmljivanja, pitanja, itd."
+              required
+            ></textarea>
           </div>
-        </div>
+          <div
+            class="form-feedback"
+            id="modalSuccess"
+            style="display: none"
+            data-i18n="modal_success"
+          >
+            Upit je uspješno poslan. Kontaktiraćemo vas uskoro!
+          </div>
+          <div
+            class="form-feedback form-feedback--error"
+            id="modalError"
+            style="display: none"
+            data-i18n="modal_error"
+          >
+            Greška pri slanju. Molimo pokušajte ponovo.
+          </div>
+          <button
+            type="submit"
+            id="modalSubmit"
+            class="btn btn-primary modal-submit"
+            data-i18n="modal_submit"
+          >
+            Pošalji upit
+          </button>
+        </form>
       </div>
     </div>
 
-    <div class="hero-right">
-      <img src="images/hero.webp" alt="Premium vozila za iznajmljivanje" loading="eager" />
-      <div class="hero-right-overlay"></div>
-      <div class="hero-badge">
-        <span class="badge-from" data-i18n="hero_badge_from">od</span>
-        <span class="badge-price">55 KM</span>
-        <span class="badge-per" data-i18n="hero_badge_per">&nbsp;/ dan</span>
+    <!-- ============ LIGHTBOX ============ -->
+    <div
+      class="lightbox-overlay"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Pregled fotografija"
+    >
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        data-i18n-aria="lightbox_close"
+        aria-label="Zatvori"
+      >
+        &#10005;
+      </button>
+      <button
+        class="lightbox-nav lightbox-prev"
+        id="lightboxPrev"
+        data-i18n-aria="lightbox_prev"
+        aria-label="Prethodna"
+      >
+        &#8249;
+      </button>
+      <div class="lightbox-img-wrap">
+        <img id="lightboxImg" src="" alt="" />
+      </div>
+      <button
+        class="lightbox-nav lightbox-next"
+        id="lightboxNext"
+        data-i18n-aria="lightbox_next"
+        aria-label="Sljedeća"
+      >
+        &#8250;
+      </button>
+      <div class="lightbox-footer">
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+        <div class="lightbox-dots" id="lightboxDots"></div>
       </div>
     </div>
 
-  </section>
-
-  <!-- ============ FLEET — ALL VEHICLES ============ -->
-  <section class="section featured" id="vozila">
-    <div class="container">
-
-      <div class="section-head" data-reveal>
-        <div class="section-head-left">
-          <span class="eyebrow" data-i18n="featured_eyebrow">Vozila</span>
-          <h2 data-i18n="featured_heading">Naša vozila</h2>
-        </div>
-      </div>
-
-      <div class="fleet-grid" id="featuredGrid">
-
-        <!-- 1: Audi A4 -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/skoda-octavia/skoda_prednja.webp" alt="Skoda prednja" class="active" loading="lazy" />
-            <img src="images/skoda-octavia/skoda_naslovna.webp" alt="Skoda naslovna" loading="lazy" />
-            <img src="images/skoda-octavia/skoda_zadnja.webp" alt="Skoda zadnja" loading="lazy" />
-            <img src="images/skoda-octavia/skoda_unutrasnjost.webp" alt="Skoda unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Skoda Octavia 2021</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">120 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">100 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">85 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Skoda Octavia 2021" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2: Citroen C5 Aircross -->
-        <div class="car-card" data-tags="diesel automatic">
-          <div class="car-slider" data-slider>
-            <img src="images/citroen-c5-aircross/citroen-prednja.webp" alt="Citroen C5 Aircross prednja" class="active" loading="lazy" />
-            <img src="images/citroen-c5-aircross/citroen-bocna.webp" alt="Citroen C5 Aircross bočna" loading="lazy" />
-            <img src="images/citroen-c5-aircross/citroen-bocna2.webp" alt="Citroen C5 Aircross bočna 2" loading="lazy" />
-            <img src="images/citroen-c5-aircross/citroen-zadnja.webp" alt="Citroen C5 Aircross zadnja" loading="lazy" />
-            <img src="images/citroen-c5-aircross/citroen-unutrasnja.webp" alt="Citroen C5 Aircross unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-              <button class="slider-dot" aria-label="Slajd 5"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Citroen C5 Aircross 2020</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_automatic">Automatik</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">120 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">95 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">90 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Citroen C5 Aircross 2020" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3: Mercedes B-Klasa -->
-        <div class="car-card" data-tags="diesel automatic">
-          <div class="car-slider" data-slider>
-            <img src="images/mercedes-b-klasa-crna/mercedes-crna-naslovna.webp" alt="Mercedes B-Klasa naslovna" class="active" loading="lazy" />
-            <img src="images/mercedes-b-klasa-crna/mercedes-crna-bocna.webp" alt="Mercedes B-Klasa bočna" loading="lazy" />
-            <img src="images/mercedes-b-klasa-crna/mercedes-crna-zadnja.webp" alt="Mercedes B-Klasa zadnja" loading="lazy" />
-            <img src="images/mercedes-b-klasa-crna/mercedes-crna-unutrasnjost.webp" alt="Mercedes B-Klasa unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Mercedes B-Klasa 2017 (<span data-i18n="color_black">Crna</span>)</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_automatic">Automatik</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">80 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">70 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">65 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Mercedes B-Klasa 2017 (Crna)" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4: Volkswagen Golf -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/volkswagen-golf-dsg7/golf-prednja.webp" alt="VW Golf prednja" class="active" loading="lazy" />
-            <img src="images/volkswagen-golf-dsg7/golf-bocna.webp" alt="VW Golf bočna" loading="lazy" />
-            <img src="images/volkswagen-golf-dsg7/golf-zadnja.webp" alt="VW Golf zadnja" loading="lazy" />
-            <img src="images/volkswagen-golf-dsg7/golf-unutrasnjost.webp" alt="VW Golf unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Volkswagen Golf 2020</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">120 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">90 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">80 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Volkswagen Golf 2020" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5: Mercedes B-Klasa (Bijela) -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-naslovna.webp" alt="Mercedes B-Klasa bijela naslovna" class="active" loading="lazy" />
-            <img src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-bocna.webp" alt="Mercedes B-Klasa bijela bočna" loading="lazy" />
-            <img src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-zadnja.webp" alt="Mercedes B-Klasa bijela zadnja" loading="lazy" />
-            <img src="images/mercedes-b-klasa-bijela/mercedes-b-klasa-bijela-unutrasnjost.webp" alt="Mercedes B-Klasa bijela unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Mercedes B-Klasa 2017 (<span data-i18n="color_white">Bijela</span>)</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">80 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">70 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">65 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Mercedes B-Klasa 2017 (Bijela)" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6: Citroen C3 -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/citroen-c3/citreon-c3-naslovna.webp" alt="Citroen C3 naslovna" class="active" loading="lazy" />
-            <img src="images/citroen-c3/citreon-c3-prednja.webp" alt="Citroen C3 prednja" loading="lazy" />
-            <img src="images/citroen-c3/citreon-c3-bocna.webp" alt="Citroen C3 bočna" loading="lazy" />
-            <img src="images/citroen-c3/citreon-c3-bocna2.webp" alt="Citroen C3 bočna 2" loading="lazy" />
-            <img src="images/citroen-c3/citreon-c3-zadnja.webp" alt="Citroen C3 zadnja" loading="lazy" />
-            <img src="images/citroen-c3/citroen-c3-unutrasnja.webp" alt="Citroen C3 unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-              <button class="slider-dot" aria-label="Slajd 5"></button>
-              <button class="slider-dot" aria-label="Slajd 6"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Citroen C3 2021</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">70 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">60 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">55 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Citroen C3 2021" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7: Peugeot 208 -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/peugeot-208/peugeot-naslovna.webp" alt="Peugeot 208 naslovna" class="active" loading="lazy" />
-            <img src="images/peugeot-208/peugeot-bocna.webp" alt="Peugeot 208 bočna" loading="lazy" />
-            <img src="images/peugeot-208/peugeot-zadnja.webp" alt="Peugeot 208 zadnja" loading="lazy" />
-            <img src="images/peugeot-208/peugeot-unutrasnjost.webp" alt="Peugeot 208 unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Peugeot 208 2021</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">70 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">60 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">55 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Peugeot 208 2021" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8: Škoda Fabia -->
-        <div class="car-card" data-tags="petrol manual">
-          <div class="car-slider" data-slider>
-            <img src="images/skoda-fabia/fabia-naslovna.webp" alt="Škoda Fabia naslovna" class="active" loading="lazy" />
-            <img src="images/skoda-fabia/fabia-bocna.webp" alt="Škoda Fabia bočna" loading="lazy" />
-            <img src="images/skoda-fabia/fabia-bocna2.webp" alt="Škoda Fabia bočna 2" loading="lazy" />
-            <img src="images/skoda-fabia/fabia-zadnja.webp" alt="Škoda Fabia zadnja" loading="lazy" />
-            <img src="images/skoda-fabia/fabia-unutrasnja.webp" alt="Škoda Fabia unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-              <button class="slider-dot" aria-label="Slajd 5"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Škoda Fabia 2021</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_petrol">Benzin</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">65 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">60 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">55 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Škoda Fabia 2021" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9: Renault Clio -->
-        <div class="car-card" data-tags="diesel manual">
-          <div class="car-slider" data-slider>
-            <img src="images/renault-clio/renault-naslovna.webp" alt="Renault Clio naslovna" class="active" loading="lazy" />
-            <img src="images/renault-clio/renault-bocna.webp" alt="Renault Clio bočna" loading="lazy" />
-            <img src="images/renault-clio/reanult-bocna2.webp" alt="Renault Clio bočna 2" loading="lazy" />
-            <img src="images/renault-clio/renault-zadnja.webp" alt="Renault Clio zadnja" loading="lazy" />
-            <img src="images/renault-clio/renault-unutrasnjost.webp" alt="Renault Clio unutrašnjost" loading="lazy" />
-            <button class="slider-btn prev" aria-label="Prethodna">&#8249;</button>
-            <button class="slider-btn next" aria-label="Sljedeća">&#8250;</button>
-            <div class="slider-dots">
-              <button class="slider-dot active" aria-label="Slajd 1"></button>
-              <button class="slider-dot" aria-label="Slajd 2"></button>
-              <button class="slider-dot" aria-label="Slajd 3"></button>
-              <button class="slider-dot" aria-label="Slajd 4"></button>
-              <button class="slider-dot" aria-label="Slajd 5"></button>
-            </div>
-          </div>
-          <div class="car-body">
-            <h3 class="car-name">Renault Clio 2019</h3>
-            <div class="car-meta">
-              <span class="car-tag" data-i18n="tag_diesel">Dizel</span>
-              <span class="car-tag" data-i18n="tag_manual">Manuelni</span>
-              <span class="car-tag" data-i18n="tag_seats">5 mjesta</span>
-            </div>
-            <div class="car-footer">
-              <div class="car-pricing">
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_1_2">1–2 dana</span><span class="price-tier-price">70 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_3_6">3–6 dana</span><span class="price-tier-price">60 KM</span></div>
-                <div class="price-tier"><span class="price-tier-days" data-i18n="price_7_30">7–30 dana</span><span class="price-tier-price">55 KM</span></div>
-              </div>
-
-              <div class="car-inclusions">
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5L2 4v4.5c0 3.2 2.5 5.9 6 6.8 3.5-.9 6-3.6 6-6.8V4L8 1.5z"/><path d="M5.5 8l1.5 1.5 3-3"/></svg><span data-i18n="vehicle_incl_insurance">Kasko osigurano</span></span>
-                <span class="car-inclusion"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><path d="M1.5 9h10l.5 3H1.5V9z"/><path d="M11.5 10.5L13 7.5h1.5"/></svg><span data-i18n="incl_roadside">Pomoć na putu</span></span>
-              </div>
-              <button class="btn btn-primary inquire-btn" data-car="Renault Clio 2019" data-i18n="tag_inquiry">Upit</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Pagination -->
-      <div class="fleet-pagination" id="fleetPagination">
-        <button class="fleet-page-btn" id="fleetPrev" aria-label="Prethodna stranica">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M10 4L6 8l4 4"/>
-          </svg>
-        </button>
-        <div class="fleet-page-nums" id="fleetPageNums"></div>
-        <button class="fleet-page-btn" id="fleetNext" aria-label="Sljedeća stranica">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 4l4 4-4 4"/>
-          </svg>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ WHY US ============ -->
-  <section class="section why-us" id="o-nama">
-    <div class="container">
-      <div class="why-us-inner">
-
-        <div class="why-us-left" data-reveal>
-          <span class="eyebrow" data-i18n="why_eyebrow">Zašto mi</span>
-          <h2 data-i18n="why_heading">Vozite bez brige.</h2>
-          <p data-i18n="why_desc">
-            Naš tim brine o svakom detalju kako bi vaše iskustvo iznajmljivanja
-            bilo jednostavno, pouzdano i ugodno.
-          </p>
-          <a href="#vozila" class="btn btn-dark" data-i18n="why_btn">Odaberi vozilo</a>
-        </div>
-
-        <div class="feature-list">
-
-          <div class="feature-item" data-reveal data-reveal-delay="1">
-            <div class="feature-icon">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="7" height="7" rx="1"/><rect x="11" y="2" width="7" height="7" rx="1"/>
-                <rect x="2" y="11" width="7" height="7" rx="1"/><rect x="11" y="11" width="7" height="7" rx="1"/>
-              </svg>
-            </div>
-            <div class="feature-text">
-              <h4 data-i18n="why_f1_h">Širok izbor vozila</h4>
-              <p data-i18n="why_f1_p">Više od 50 vozila, od ekonomičnih gradskih automobila do premium sedana za svaku potrebu.</p>
-            </div>
-          </div>
-
-          <div class="feature-item" data-reveal data-reveal-delay="2">
-            <div class="feature-icon">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M10.5 2.5L17 9a1.5 1.5 0 010 2.12l-5.38 5.38A1.5 1.5 0 019.5 17L3 10.5V3.5a1 1 0 011-1h6.5z"/>
-                <circle cx="6" cy="7" r="1" fill="currentColor" stroke="none"/>
-              </svg>
-            </div>
-            <div class="feature-text">
-              <h4 data-i18n="why_f2_h">Transparentne cijene</h4>
-              <p data-i18n="why_f2_p">Bez skrivenih naknada. Šta vidite u ponudi, to i plaćate — jasno, pošteno i bez iznenađenja.</p>
-            </div>
-          </div>
-
-          <div class="feature-item" data-reveal data-reveal-delay="3">
-            <div class="feature-icon">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M10 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S5.5 10 5.5 6.5A4.5 4.5 0 0110 2z"/>
-                <circle cx="10" cy="6.5" r="1.8"/>
-              </svg>
-            </div>
-            <div class="feature-text">
-              <h4 data-i18n="why_f3_h">Fleksibilno preuzimanje</h4>
-              <p data-i18n="why_f3_p">Preuzimanje i vraćanje na više lokacija. Prilagođavamo se vašem rasporedu.</p>
-            </div>
-          </div>
-
-          <div class="feature-item" data-reveal data-reveal-delay="4">
-            <div class="feature-icon">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M10 2L3 5v5.5c0 4 3.13 7.35 7 8.5 3.87-1.15 7-4.5 7-8.5V5L10 2z"/>
-                <path d="M7 10l2 2 4-4"/>
-              </svg>
-            </div>
-            <div class="feature-text">
-              <h4 data-i18n="why_f4_h">Redovno održavana vozila</h4>
-              <p data-i18n="why_f4_p">Svako vozilo prolazi redovne tehničke preglede. Vozite s povjerenjem svaki put.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-
-        <div class="contact-info" data-reveal>
-          <span class="eyebrow" data-i18n="contact_eyebrow">Kontakt</span>
-          <h2 data-i18n="contact_heading">Pišite nam.</h2>
-          <p data-i18n="contact_desc">
-            Naš tim je dostupan od ponedjeljka do subote, 8h&ndash;20h.
-            Slobodno nas pozovite ili pošaljite poruku.
-          </p>
-          <div class="contact-details">
-
-            <div class="contact-detail">
-              <div class="contact-icon">
-                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3 3.5C3 2.67 3.67 2 4.5 2h1.72a1 1 0 01.96.73l.8 2.82a1 1 0 01-.23 1L6.7 7.55a10.1 10.1 0 004.75 4.75l1-.92a1 1 0 011-.23l2.82.8a1 1 0 01.73.96V14.5c0 .83-.67 1.5-1.5 1.5A12.5 12.5 0 013 3.5z"/>
-                </svg>
-              </div>
-              <div class="contact-detail-text">
-                <strong data-i18n="contact_lbl_phone">Telefon</strong>
-                <a href="tel:+38765516167">+387 65 516 167</a>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="contact-icon">
-                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="2" y="4" width="14" height="10" rx="1.5"/>
-                  <path d="M2 5.5l7 4.5 7-4.5"/>
-                </svg>
-              </div>
-              <div class="contact-detail-text">
-                <strong data-i18n="contact_lbl_email">E-mail</strong>
-                <a href="mailto:mmautosalon69@gmail.com">mmautosalon69@gmail.com</a>
-              </div>
-            </div>
-
-            <a class="contact-detail contact-detail--link" href="https://maps.google.com/?q=Branka+Popovića+83,+Banja+Luka,+BiH" target="_blank" rel="noopener noreferrer">
-              <div class="contact-icon">
-                <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M9 2a4.5 4.5 0 014.5 4.5c0 3.5-4.5 9-4.5 9S4.5 10 4.5 6.5A4.5 4.5 0 019 2z"/>
-                  <circle cx="9" cy="6.5" r="1.8"/>
-                </svg>
-              </div>
-              <div class="contact-detail-text">
-                <strong data-i18n="contact_lbl_address">Adresa</strong>
-                <span>Branka Popovića 83, Banja Luka, BiH</span>
-              </div>
-              <span class="maps-hint" data-i18n="contact_maps_hint">Klikni da otvoriš u mapama</span>
-            </a>
-
-          </div>
-        </div>
-
-        <div class="contact-form-wrap" data-reveal data-reveal-delay="2">
-          <form id="contactForm" novalidate>
-            <div class="form-group">
-              <label for="name" data-i18n="contact_lbl_name">Ime i prezime</label>
-              <input type="text" id="name" name="name" data-i18n-ph="contact_ph_name" placeholder="npr. Marko Ćetković" required />
-            </div>
-            <div class="form-group">
-              <label for="email" data-i18n="contact_lbl_emailf">E-mail adresa</label>
-              <input type="email" id="email" name="email" data-i18n-ph="contact_ph_email" placeholder="vas@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="message" data-i18n="contact_lbl_msg">Poruka</label>
-              <textarea id="message" name="message" data-i18n-ph="contact_ph_msg" placeholder="Koji automobil vas zanima, datumi, pitanja..." required></textarea>
-            </div>
-            <div class="form-feedback" id="contactSuccess" style="display:none;" data-i18n="contact_success">Poruka je uspješno poslana. Hvala vam!</div>
-            <div class="form-feedback form-feedback--error" id="contactError" style="display:none;" data-i18n="contact_error">Greška pri slanju. Molimo pokušajte ponovo.</div>
-            <button type="submit" id="contactSubmit" class="btn btn-primary" data-i18n="contact_submit">Pošalji poruku</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo">Rent a car <span>MM</span></a>
-          <p data-i18n="footer_desc">Premium iznajmljivanje vozila u Banja Luci i okolici. Pouzdano, transparentno i fleksibilno.</p>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer_nav_h">Navigacija</h4>
-          <ul>
-            <li><a href="index.html" data-i18n="footer_home">Početna</a></li>
-            <li><a href="#vozila" data-i18n="footer_cars">Vozila</a></li>
-            <li><a href="#contact" data-i18n="footer_contact">Kontakt</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer_contact_h">Kontakt</h4>
-          <ul>
-            <li><a href="tel:+38765516167">+387 65 516 167</a></li>
-            <li><a href="mailto:mmautosalon69@gmail.com">mmautosalon69@gmail.com</a></li>
-            <li>Branka Popovića 83, Banja Luka</li>
-            <li data-i18n="footer_hours">Pon&ndash;Sub, 8h&ndash;20h</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom" data-i18n="footer_copy">
-        &copy; 2026 Rent a car MM. Sva prava zadržana.
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============ UPIT MODAL ============ -->
-  <div class="modal-overlay" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal">
-      <button class="modal-close" id="modalClose" aria-label="Zatvori">&times;</button>
-      <h2 class="modal-title" id="modalTitle" data-i18n="modal_title">Pošalji upit</h2>
-      <p class="modal-car-label">
-        <span data-i18n="modal_car_label">Upit za:</span> <strong id="modalCarName"></strong>
-      </p>
-      <form id="inquiryForm" novalidate>
-        <div class="form-group">
-          <label for="inqName" data-i18n="modal_lbl_name">Ime i prezime</label>
-          <input type="text" id="inqName" data-i18n-ph="modal_ph_name" placeholder="npr. Marko Ćetković" required />
-        </div>
-        <div class="form-group">
-          <label for="inqEmail" data-i18n="modal_lbl_email">E-mail adresa</label>
-          <input type="email" id="inqEmail" data-i18n-ph="modal_ph_email" placeholder="vas@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="inqPhone">
-            <span data-i18n="modal_lbl_phone">Telefon</span>
-            <span class="optional" data-i18n="modal_phone_opt">(opciono)</span>
-          </label>
-          <input type="tel" id="inqPhone" data-i18n-ph="modal_ph_phone" placeholder="+387 65 000 000" />
-        </div>
-        <div class="form-group">
-          <label for="inqMessage" data-i18n="modal_lbl_msg">Poruka</label>
-          <textarea id="inqMessage" data-i18n-ph="modal_ph_msg" placeholder="Datumi iznajmljivanja, pitanja, itd." required></textarea>
-        </div>
-        <div class="form-feedback" id="modalSuccess" style="display:none;" data-i18n="modal_success">Upit je uspješno poslan. Kontaktiraćemo vas uskoro!</div>
-        <div class="form-feedback form-feedback--error" id="modalError" style="display:none;" data-i18n="modal_error">Greška pri slanju. Molimo pokušajte ponovo.</div>
-        <button type="submit" id="modalSubmit" class="btn btn-primary modal-submit" data-i18n="modal_submit">Pošalji upit</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Pregled fotografija">
-    <button class="lightbox-close" id="lightboxClose" data-i18n-aria="lightbox_close" aria-label="Zatvori">&#10005;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" data-i18n-aria="lightbox_prev" aria-label="Prethodna">&#8249;</button>
-    <div class="lightbox-img-wrap">
-      <img id="lightboxImg" src="" alt="" />
-    </div>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" data-i18n-aria="lightbox_next" aria-label="Sljedeća">&#8250;</button>
-    <div class="lightbox-footer">
-      <div class="lightbox-counter" id="lightboxCounter"></div>
-      <div class="lightbox-dots" id="lightboxDots"></div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
