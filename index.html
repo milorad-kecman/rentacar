@@ -25,7 +25,8 @@
     <meta name="twitter:image" content="https://milorad-kecman.github.io/rentacar/images/hero.jpg" />
     <link rel="preload" as="font" type="font/woff2" href="fonts/outfit-latin.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/outfit-latin-ext.woff2" crossorigin />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1724,8 +1725,8 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="i18n.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
