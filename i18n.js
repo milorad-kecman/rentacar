@@ -137,6 +137,11 @@ const translations = {
     // Email template internals
     phone_not_provided: 'Not provided',
     general_inquiry:    'General inquiry',
+
+    email_label_from:  'From',
+    email_label_phone: 'Phone',
+    email_label_car:   'Car',
+    email_intro:       'You received an inquiry for {car} with the following content:',
   },
 
   sr: {
@@ -270,6 +275,11 @@ const translations = {
     // Email template internals
     phone_not_provided: 'Nije navedeno',
     general_inquiry:    'Opšti upit',
+
+    email_label_from:  'Od',
+    email_label_phone: 'Telefon',
+    email_label_car:   'Auto',
+    email_intro:       'Dobili ste upit za auto {car} sa sljedećim sadržajem:',
   },
 };
 

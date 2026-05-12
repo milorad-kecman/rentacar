@@ -44,6 +44,21 @@ function hideFeedback(successEl, errorEl) {
   if (errorEl)   errorEl.style.display   = 'none';
 }
 
+function buildEmailParams(carName, fromName, fromEmail, phone, message) {
+  const t = (key, fallback) => window.i18n?.t(key) ?? fallback;
+  return {
+    car_name:    carName,
+    from_name:   fromName,
+    from_email:  fromEmail,
+    phone:       phone || t('phone_not_provided', 'N/A'),
+    message,
+    label_from:  t('email_label_from',  'From'),
+    label_phone: t('email_label_phone', 'Phone'),
+    label_car:   t('email_label_car',   'Car'),
+    intro:       t('email_intro', 'You received an inquiry for {car} with the following content:').replace('{car}', carName),
+  };
+}
+
 // =============================================
 // SCROLL REVEAL — IntersectionObserver
 // =============================================
@@ -166,13 +181,11 @@ if (inquiryForm && modalSubmit) {
     setBtn(modalSubmit, true);
 
     try {
-      await emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, {
-        car_name:   modalCarName.textContent,
-        from_name:  name,
-        from_email: email,
-        phone:      phone || (window.i18n ? window.i18n.t('phone_not_provided') : 'N/A'),
-        message,
-      });
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        buildEmailParams(modalCarName.textContent, name, email, phone, message)
+      );
 
       showFeedback(modalSuccess, modalError, true);
       inquiryForm.reset();
@@ -207,13 +220,11 @@ if (contactForm && contactSubmit) {
     setBtn(contactSubmit, true);
 
     try {
-      await emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, {
-        car_name:   (window.i18n ? window.i18n.t('general_inquiry') : 'General inquiry'),
-        from_name:  name,
-        from_email: email,
-        phone:      window.i18n ? window.i18n.t('phone_not_provided') : 'N/A',
-        message,
-      });
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        buildEmailParams(window.i18n?.t('general_inquiry') ?? 'General inquiry', name, email, '', message)
+      );
 
       showFeedback(contactSuccess, contactError, true);
       contactForm.reset();
